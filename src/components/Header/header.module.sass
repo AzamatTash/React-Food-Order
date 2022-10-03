@@ -1,0 +1,69 @@
+.wrapper
+  width: 100%
+  min-width: 1024px
+  display: flex
+  justify-content: space-between
+  padding: 7px 328px 7px 198px
+  align-items: center
+  background-color: #F2F2F2
+  border-bottom: 0.5px solid #A4ACAD
+
+  .left
+    font-size: 18px
+    font-weight: 500
+    text-align: center
+
+    .title
+      line-height: 22px
+
+    .phone
+      display: block
+      line-height: 18px
+      color: #FF9846
+      text-decoration: none
+
+    .subTitle
+      font-size: 14px
+      line-height: 17px
+      color: #A4ACAD
+      margin-top: 5px
+
+  .right
+    display: flex
+    align-items: center
+
+    a
+      font-size: 18px
+      font-weight: 400
+      line-height: 22px
+      color: #111111
+      text-decoration: none
+      margin-right: 10px
+      transition: 0.2s linear
+
+      &:hover
+        color: #FF9846
+
+    .searchIcon
+      cursor: pointer
+
+    .form
+      position: absolute
+      top: 110px
+      right: 325px
+
+      .input
+        width: 200px
+        height: 30px
+        border: 0.5px solid #A4ACAD
+        padding: 5px
+        font-size: 14px
+        font-family: "Roboto", sans-serif
+        font-weight: 400
+        color: #000000
+
+        &::placeholder
+          color: #A4ACAD
+
+        &:focus-visible
+          outline: none
