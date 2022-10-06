@@ -1,0 +1,106 @@
+.wrapper
+  width: 100%
+  min-width: 660px
+  height: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+
+  .column
+    width: calc(50% - 15px)
+    margin-right: 30px
+
+    &:last-child
+      margin-right: 0
+
+    .item
+      width: 100%
+      height: 100%
+      max-height: 130px
+      position: relative
+      margin-top: 20px
+      border-radius: 5px
+      overflow: hidden
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+      transition: 0.2s linear
+
+      &::after
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 2
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.07) 100%)
+
+      &:hover
+        box-shadow: 0 4px 4px rgba(255, 152, 70, 0.7)
+
+      &:first-child
+        margin-top: 0
+
+      img
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      .title
+        display: block
+        position: absolute
+        bottom: 10px
+        left: 10px
+        font-size: 24px
+        line-height: 30px
+        font-weight: 500
+        color: #FFFFFF
+
+    .row
+      width: 100%
+      max-width: 678px
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .itemRow
+        width: calc(50% - 10px)
+        height: 130px
+        //1920/1080 >130px
+        position: relative
+        border-radius: 5px
+        overflow: hidden
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+        transition: 0.2s linear
+
+        &::after
+          content: ''
+          display: block
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 2
+          background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.07) 100%)
+
+        &:hover
+          box-shadow: 0 4px 4px rgba(255, 152, 70, 0.7)
+
+        img
+          display: block
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+        .title
+          display: block
+          position: absolute
+          bottom: 10px
+          left: 10px
+          font-size: 24px
+          line-height: 30px
+          font-weight: 500
+          color: #FFFFFF
