@@ -3,7 +3,9 @@ import styles from './app.module.sass';
 import SideBarMenu from './components/SideBarMenu';
 import SideBarCart from './components/SideBarCart';
 import Header from './components/Header';
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
+import Footer from './components/Footer';
+import ProductCard from "./components/ProductCard";
 
 function App() {
     return (
@@ -12,7 +14,9 @@ function App() {
             <Header/>
             <SideBarCart/>
             <div className={styles.container}>
-                <Home/>
+                {/*<Home/>*/}
+                <ProductCard/>
+                <Footer/>
             </div>
         </>
     );
