@@ -7,8 +7,16 @@ import Slider from 'react-slick';
 import salomonSet from '../../assets/img/salomon-set.jpg'
 import philadelphiaSet from '../../assets/img/Philadelphia-set.jpg'
 import philadelphiaBigSet from '../../assets/img/big-Philadelphia-set.jpg'
+import upCountIcon from '../../assets/img/up-count.svg';
 
-const GoodsCarousel = () => {
+interface Product {
+    image: any;
+    title: string;
+    description: string;
+    price: number;
+}
+
+const GoodsCarousel = (props:any) => {
     const settings = {
         speed: 500,
         dots: true,
@@ -45,65 +53,62 @@ const GoodsCarousel = () => {
             }
         ]
     };
-
+    const setsList = [
+        {
+            image: salomonSet,
+            title: 'Саломон сет',
+            description: '1050 грамм, 30 кусочков',
+            price: 1500
+        },
+        {
+            image: philadelphiaSet,
+            title: 'Филадельфия о лосось сет',
+            description: '1260 грамм, 36 кусочков',
+            price: 1150
+        },
+        {
+            image: philadelphiaBigSet,
+            title: 'Самая большая Филадельфия',
+            description: '2050 грамм, 45 кусочков',
+            price: 2100
+        },
+        {
+            image: salomonSet,
+            title: 'Саломон сет',
+            description: '1050 грамм, 30 кусочков',
+            price: 1500
+        },
+        {
+            image: philadelphiaSet,
+            title: 'Филадельфия о лосось сет',
+            description: '1260 грамм, 36 кусочков',
+            price: 1150
+        },
+        {
+            image: philadelphiaBigSet,
+            title: 'Самая большая Филадельфия',
+            description: '2050 грамм, 45 кусочков',
+            price: 2100
+        }
+    ];
 
     return (
         <div className={styles.wrapper}>
             <Slider {...settings}>
-                <div className={styles.card}>
-                    <img src={salomonSet} className={styles.img} alt='imgSet'/>
-                    <h1 className={styles.title}>Саломон сет</h1>
-                    <h3 className={styles.subTitle}>1050 грамм, 30 кусочков</h3>
-                    <div className={styles.footer}>
-                        <div className={styles.price}>1500 Руб</div>
-                        <button className={styles.btn}>Хочу!</button>
-                    </div>
-                </div>
-                <div className={styles.card}>
-                    <img src={philadelphiaSet} className={styles.img} alt='imgSet'/>
-                    <h1 className={styles.title}>Филадельфия о лосось сет</h1>
-                    <h3 className={styles.subTitle}>1260 грамм, 36 кусочков</h3>
-                    <div className={styles.footer}>
-                        <div className={styles.price}>1150 Руб</div>
-                        <button className={styles.btn}>Хочу!</button>
-                    </div>
-                </div>
-                <div className={styles.card}>
-                    <img src={philadelphiaBigSet} className={styles.img} alt='imgSet'/>
-                    <h1 className={styles.title}>Самая большая Филадельфия</h1>
-                    <h3 className={styles.subTitle}>2050 грамм, 45 кусочков</h3>
-                    <div className={styles.footer}>
-                        <div className={styles.price}>2100 Руб</div>
-                        <button className={styles.btn}>Хочу!</button>
-                    </div>
-                </div>
-                <div className={styles.card}>
-                    <img src={salomonSet} className={styles.img} alt='imgSet'/>
-                    <h1 className={styles.title}>Саломон сет</h1>
-                    <h3 className={styles.subTitle}>1050 грамм, 30 кусочков</h3>
-                    <div className={styles.footer}>
-                        <div className={styles.price}>1500 Руб</div>
-                        <button className={styles.btn}>Хочу!</button>
-                    </div>
-                </div>
-                <div className={styles.card}>
-                    <img src={philadelphiaSet} className={styles.img} alt='imgSet'/>
-                    <h1 className={styles.title}>Филадельфия о лосось сет</h1>
-                    <h3 className={styles.subTitle}>1260 грамм, 36 кусочков</h3>
-                    <div className={styles.footer}>
-                        <div className={styles.price}>1150 Руб</div>
-                        <button className={styles.btn}>Хочу!</button>
-                    </div>
-                </div>
-                <div className={styles.card}>
-                    <img src={philadelphiaBigSet} className={styles.img} alt='imgSet'/>
-                    <h1 className={styles.title}>Самая большая Филадельфия</h1>
-                    <h3 className={styles.subTitle}>2050 грамм, 45 кусочков</h3>
-                    <div className={styles.footer}>
-                        <div className={styles.price}>2100 Руб</div>
-                        <button className={styles.btn}>Хочу!</button>
-                    </div>
-                </div>
+                {(props.children || setsList).map((obj:Product) => (
+                        <div className={styles.card}>
+                            <img src={obj.image} className={props.isProductPage ? styles.img : styles.imgInitial}
+                                 alt='imgSet'/>
+                            <h1 className={styles.title}>{obj.title}</h1>
+                            {props.isProductPage ? '' : <h3 className={styles.subTitle}>{obj.description}</h3>}
+                            <div className={styles.footer}>
+                                <div className={styles.price}>{obj.price} Руб</div>
+                                {props.isProductPage ? <img className={styles.btnIcon} src={upCountIcon} alt='Добавить'/> :
+                                    <button className={styles.btn}>Хочу!</button>}
+                            </div>
+                        </div>
+                    ))
+                }
             </Slider>
         </div>
     );
