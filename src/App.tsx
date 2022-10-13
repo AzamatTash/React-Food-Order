@@ -6,7 +6,8 @@ import Header from './components/Header';
 // import Home from './Pages/Home';
 import Footer from './components/Footer';
 // import ProductPage from './Pages/Product';
-import ProductList from './Pages/ProductsList';
+// import ProductList from './Pages/ProductsList';
+import Reviews from './Pages/Reviews';
 
 function App() {
     return (
@@ -17,7 +18,8 @@ function App() {
             <div className={styles.container}>
                 {/*<Home/>*/}
                 {/*<ProductPage/>*/}
-                <ProductList/>
+                {/*<ProductList/>*/}
+                <Reviews/>
                 <Footer/>
             </div>
         </>

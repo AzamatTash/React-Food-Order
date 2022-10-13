@@ -1,0 +1,119 @@
+.wrapper
+  width: 100%
+  height: 100%
+  padding: 40px 0
+
+  .header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 30px
+
+    .title
+      font-size: 24px
+      font-weight: 500
+      line-height: 30px
+
+    .btn
+      font-size: 18px
+      font-weight: 400
+      line-height: 22px
+      color: #FFFFFF
+      padding: 7px 17px
+      background-color: #111111
+      border: none
+      border-radius: 5px
+      cursor: pointer
+      transition: 0.2s linear
+
+      &:hover
+        background-color: lighten(#111111, 15%)
+
+  .content
+    .form
+      width: 100%
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      margin-bottom: 30px
+
+      .fieldName,
+      .fieldText
+        width: 170px
+        height: 40px
+        font-size: 18px
+        font-weight: 400
+        line-height: 22px
+        border: none
+        border-radius: 5px
+        background-color: #FFFFFF
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
+        margin-bottom: 10px
+        padding: 10px
+
+        &:focus-visible
+          outline: 2px solid #FF9846
+
+        &::placeholder
+          font-size: 18px
+          font-weight: 400
+          line-height: 22px
+          color: #A4ACAD
+
+      .fieldText
+        width: 100%
+        height: 200px
+        resize: none
+
+      .error
+        font-size: 14px
+        line-height: 22px
+        font-weight: 400
+        padding-left: 10px
+        margin-bottom: 10px
+        color: red
+
+      .btn
+        padding: 1px 24px
+        background-color: #F46D40
+        border: none
+        color: #FFFFFF
+        border-radius: 5px
+        font-weight: 400
+        font-size: 24px
+        line-height: 30px
+        cursor: pointer
+        transition: 0.2s linear
+
+        &:hover
+          background-color: darken(#F46D40, 5%)
+
+    .review
+      width: 100%
+      background-color: #FFFFFF
+      padding: 10px
+      margin-bottom: 20px
+      border-radius: 5px
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
+
+      .header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 20px
+
+        .name
+          font-size: 24px
+          font-weight: 500
+          line-height: 30px
+          margin-right: 20px
+
+        .date
+          font-weight: 500
+          line-height: 22px
+          color: #A4ACAD
+
+      .text
+        font-size: 18px
+        font-weight: 400
+        line-height: 22px

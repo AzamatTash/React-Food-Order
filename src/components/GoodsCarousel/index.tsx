@@ -7,12 +7,15 @@ import Slider from 'react-slick';
 import salomonSet from '../../assets/img/salomon-set.jpg'
 import philadelphiaSet from '../../assets/img/Philadelphia-set.jpg'
 import philadelphiaBigSet from '../../assets/img/big-Philadelphia-set.jpg'
-import upCountIcon from '../../assets/img/up-count.svg';
+import ProductCard from '../ProductCard';
 
 interface Product {
     image: any;
     title: string;
-    description: string;
+    description: {
+        weight: number;
+        quantity: number;
+    }
     price: number;
 }
 
@@ -57,37 +60,55 @@ const GoodsCarousel = (props:any) => {
         {
             image: salomonSet,
             title: 'Саломон сет',
-            description: '1050 грамм, 30 кусочков',
+            description: {
+                weight: 1050,
+                quantity: 30,
+            },
             price: 1500
         },
         {
             image: philadelphiaSet,
             title: 'Филадельфия о лосось сет',
-            description: '1260 грамм, 36 кусочков',
+            description: {
+                weight: 1260,
+                quantity: 36,
+            },
             price: 1150
         },
         {
             image: philadelphiaBigSet,
             title: 'Самая большая Филадельфия',
-            description: '2050 грамм, 45 кусочков',
+            description: {
+                weight: 2050,
+                quantity: 45,
+            },
             price: 2100
         },
         {
             image: salomonSet,
             title: 'Саломон сет',
-            description: '1050 грамм, 30 кусочков',
+            description: {
+                weight: 1050,
+                quantity: 30,
+            },
             price: 1500
         },
         {
             image: philadelphiaSet,
             title: 'Филадельфия о лосось сет',
-            description: '1260 грамм, 36 кусочков',
+            description: {
+                weight: 1260,
+                quantity: 36,
+            },
             price: 1150
         },
         {
             image: philadelphiaBigSet,
             title: 'Самая большая Филадельфия',
-            description: '2050 грамм, 45 кусочков',
+            description: {
+                weight: 2050,
+                quantity: 45,
+            },
             price: 2100
         }
     ];
@@ -96,18 +117,9 @@ const GoodsCarousel = (props:any) => {
         <div className={styles.wrapper}>
             <Slider {...settings}>
                 {(props.children || setsList).map((obj:Product) => (
-                        <div className={styles.card}>
-                            <img src={obj.image} className={props.isProductPage ? styles.img : styles.imgInitial}
-                                 alt='imgSet'/>
-                            <h1 className={styles.title}>{obj.title}</h1>
-                            {props.isProductPage ? '' : <h3 className={styles.subTitle}>{obj.description}</h3>}
-                            <div className={styles.footer}>
-                                <div className={styles.price}>{obj.price} Руб</div>
-                                {props.isProductPage ? <img className={styles.btnIcon} src={upCountIcon} alt='Добавить'/> :
-                                    <button className={styles.btn}>Хочу!</button>}
-                            </div>
-                        </div>
-                    ))
+                    <ProductCard image={obj.image} title={obj.title} weight={obj.description.weight}
+                                 quantity={obj.description.quantity} price={obj.price}
+                                 isProductPage={props.isProductPage}/>))
                 }
             </Slider>
         </div>

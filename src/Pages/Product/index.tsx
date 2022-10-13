@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from '../../components/ProductCard';
+import MoreProductInfo from '../../components/MoreProductInfo';
 import styles from './productPage.module.sass';
 import backIcon from '../../assets/img/back-icon.svg';
 import GoodsCarousel from '../../components/GoodsCarousel';
@@ -12,31 +12,55 @@ const Product = () => {
         {
             image: philadelphiaRolls,
             title: 'Филадельфия',
+            description: {
+                weight: '',
+                quantity: '',
+            },
             price: 140
         },
         {
             image: banzaiRolls,
             title: 'Банзай',
+            description: {
+                weight: '',
+                quantity: '',
+            },
             price: 170
         },
         {
             image: arigatoRolls,
             title: 'Аригато',
+            description: {
+                weight: '',
+                quantity: '',
+            },
             price: 180
         },
         {
             image: philadelphiaRolls,
             title: 'Филадельфия',
+            description: {
+                weight: '',
+                quantity: '',
+            },
             price: 140
         },
         {
             image: banzaiRolls,
             title: 'Банзай',
+            description: {
+                weight: '',
+                quantity: '',
+            },
             price: 170
         },
         {
             image: arigatoRolls,
             title: 'Аригато',
+            description: {
+                weight: '',
+                quantity: '',
+            },
             price: 180
         },
     ];
@@ -47,7 +71,7 @@ const Product = () => {
                 <div><img src={backIcon} alt='Назад'/></div>
                 <div className={styles.text}>Назад</div>
             </div>
-            <ProductCard/>
+            <MoreProductInfo/>
             <div className={styles.recommendation}>
                 <div className={styles.title}>Рекомендуем к этому товару</div>
                 <GoodsCarousel isProductPage={true}>
