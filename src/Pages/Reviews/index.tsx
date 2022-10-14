@@ -2,41 +2,43 @@ import React from 'react';
 import styles from './reviews.module.sass';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import {getConvertDate} from '../../utils/convertDate';
 
 interface Data {
     name: string;
     review: string;
-    date: any;
+    date: string;
 }
 
 const Reviews = () => {
-    const reviewsList = [
-       {
-           name: 'Розалия',
-           date: '02.24.21',
-           review: 'Ваша доставка и ваши блюда лучшие в гораде!) всегда очень вкусно, вовремя, ' +
+    const [reviewsList, setReviewsList] = React.useState([
+        {
+            name: 'Розалия',
+            date: '1655240584567',
+            review: 'Ваша доставка и ваши блюда лучшие в гораде!) всегда очень вкусно, вовремя, ' +
                 'всегда вежливые курьеры и девушки на телефоне',
-       },
-       {
-           name: 'Елена',
-           date: '02.23.21',
-           review: 'Ооочень вкусно!!!',
-       },
-       {
-           name: 'Сергей Гарилюк',
-           date: '02.20.21',
-           review: 'Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал лучше, суши вкуснее. ' +
-               'За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту. ' +
-               'Успехов Вам и приятных бонусов нам )',
-       },
-    ]
-    const [openForm, setOpenForm] = React.useState<boolean>(false)
+        },
+        {
+            name: 'Елена',
+            date: '1660942984567',
+            review: 'Ооочень вкусно!!!',
+        },
+        {
+            name: 'Сергей Гарилюк',
+            date: '1647810184567',
+            review: 'Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал лучше, суши вкуснее. ' +
+                'За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту. ' +
+                'Успехов Вам и приятных бонусов нам )',
+        },
+    ])
+
+    const [openForm, setOpenForm] = React.useState<boolean>(false);
 
     const initialValues:Data = {
         name: '',
         review: '',
-        date: new Date(),
-    }
+        date: +new Date() + '',
+    };
 
     const validationSchema = Yup.object({
         name: Yup.string()
@@ -47,8 +49,12 @@ const Reviews = () => {
     });
 
     const onSubmit = (values:Data) => {
-        console.log(values);
-                setOpenForm(false);
+        setReviewsList([{
+            name: values.name,
+            review: values.review,
+            date: values.date,
+        }, ...reviewsList]);
+        setOpenForm(false);
     };
 
     return (
@@ -77,11 +83,11 @@ const Reviews = () => {
                         </Form>
                     </Formik>
                 }
-                {reviewsList.map((obj, index) => (
+                {reviewsList.map((obj:Data, index:number) => (
                     <div key={index} className={styles.review}>
                         <div className={styles.header}>
                             <div className={styles.name}>{obj.name}</div>
-                            <div className={styles.date}>{obj.date}</div>
+                            <div className={styles.date}>{getConvertDate(obj.date)}</div>
                         </div>
                         <p className={styles.text}>{obj.review}</p>
                     </div>

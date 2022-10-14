@@ -1,0 +1,88 @@
+.wrapper
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
+  .header
+    width: 100%
+    margin-bottom: 30px
+
+    .title
+      font-size: 24px
+      font-weight: 500
+      line-height: 30px
+      width: 100%
+      padding: 10px 98px
+      background-color: #F2F2F2
+      border-radius: 5px
+      margin-bottom: 15px
+
+    .product
+      width: 100%
+      height: 57px
+      display: flex
+      align-items: center
+      margin-bottom: 20px
+
+      .img
+        width: 25%
+        height: 100%
+        object-fit: cover
+
+      .info
+        width: 75%
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin-left: 10px
+
+        .productName
+          line-height: 22px
+          margin-bottom: 10px
+          overflow: hidden
+
+        .optionals
+          display: flex
+          align-items: center
+
+          .bntCount
+            display: inline
+            width: 20px
+            height: 20px
+            cursor: pointer
+
+          .productCount,
+          .productPrice
+            font-size: 20px
+            font-weight: 700
+            line-height: 23px
+            margin: 0 8px
+
+.footer
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .productPriceTotal
+    font-size: 24px
+    font-weight: 700
+    line-height: 30px
+    margin-bottom: 10px
+
+  .btnSendOrder
+    padding: 1px 24px
+    background-color: #F46D40
+    border: none
+    color: #FFFFFF
+    border-radius: 5px
+    font-weight: 400
+    font-size: 24px
+    line-height: 30px
+    cursor: pointer
+    transition: 0.2s linear
+
+    &:hover
+      background-color: darken(#F46D40, 5%)
