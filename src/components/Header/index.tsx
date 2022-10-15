@@ -3,7 +3,7 @@ import styles from './header.module.sass'
 import searchIcon from '../../assets/img/search-icon.svg';
 
 const Header = () => {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState<boolean>(false);
 
     return (
         <div className={styles.wrapper}>
@@ -16,9 +16,12 @@ const Header = () => {
             <div className={styles.right}>
                 <a href="#">Отзывы</a>
                 <a href="#">Доставка и оплата</a>
-                <img className={styles.searchIcon} onClick={() => setIsActive(!isActive)} src={searchIcon} alt='Поиск'/>
+                {!isActive && <button className={styles.searchIcon} onClick={() => setIsActive(true)}>
+                    <img src={searchIcon} alt='Поиск'/>
+                </button> }
                 {isActive && <form className={styles.form}>
-                    <input type="text" className={styles.input} placeholder='поиск...'/>
+                    <input autoFocus={true} tabIndex={0} onBlur={() => setIsActive(false)}
+                           type="text" className={styles.input} placeholder='поиск...'/>
                 </form>}
             </div>
         </div>

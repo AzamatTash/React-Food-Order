@@ -11,12 +11,13 @@ const Sort = () => {
         'Вес',
     ];
 
-    const [open, setOpen] = React.useState<boolean>(false);
+    const [isOpen, setIsOpen] = React.useState<boolean>(false);
     const [isActive, setIsActive] = React.useState<number>(0);
     const currenSort = sortList[isActive];
 
     return (
-        <div className={open ? styles.sortOpen : styles.sortDefault} onClick={() => setOpen(!open)}>
+        <div className={isOpen ? styles.sortOpen : styles.sortDefault}
+             tabIndex={0} onBlur={(() => setIsOpen(false))} onClick={() => setIsOpen(!isOpen)}>
             <div className={styles.title}>Сортировка</div>
             <div className={styles.text}>{currenSort}</div>
             <ul className={styles.list}>

@@ -6,8 +6,8 @@ import Header from './components/Header';
 // import Home from './Pages/Home';
 import Footer from './components/Footer';
 // import ProductPage from './Pages/Product';
-// import ProductList from './Pages/ProductsList';
-import Reviews from './Pages/Reviews';
+import ProductList from './Pages/ProductsList';
+// import Reviews from './Pages/Reviews';
 
 function App() {
     return (
@@ -16,10 +16,12 @@ function App() {
             <Header/>
             <SideBarCart/>
             <div className={styles.container}>
-                {/*<Home/>*/}
-                {/*<ProductPage/>*/}
-                {/*<ProductList/>*/}
-                <Reviews/>
+                <div>
+                    {/*<Home/>*/}
+                    {/*<ProductPage/>*/}
+                    <ProductList/>
+                    {/*<Reviews/>*/}
+                </div>
                 <Footer/>
             </div>
         </>

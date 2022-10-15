@@ -1,5 +1,6 @@
 .wrapper
   width: 100%
+  height: 95px
   min-width: 1024px
   display: flex
   justify-content: space-between
@@ -45,25 +46,30 @@
         color: #FF9846
 
     .searchIcon
+      background-color: transparent
+      border: none
       cursor: pointer
 
     .form
       position: absolute
-      top: 110px
-      right: 325px
+      top: 75px
+      right: 330px
 
       .input
-        width: 200px
-        height: 30px
-        border: 0.5px solid #A4ACAD
-        padding: 5px
-        font-size: 14px
-        font-family: "Roboto", sans-serif
+        height: 40px
+        font-size: 18px
         font-weight: 400
-        color: #000000
+        line-height: 22px
+        border: none
+        border-radius: 5px
+        background-color: #FFFFFF
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
+        margin-bottom: 10px
+        padding: 10px
+        outline: 2px solid #FF9846
 
         &::placeholder
+          font-size: 18px
+          font-weight: 400
+          line-height: 22px
           color: #A4ACAD
-
-        &:focus-visible
-          outline: none

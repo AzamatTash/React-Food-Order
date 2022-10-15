@@ -7,6 +7,8 @@ import upCount from '../../assets/img/up-count.svg'
 const Cart = () => {
     const [countProduct, setCountProduct] = React.useState<number>(1);
 
+    const isOrderingPage = true;
+
     const getShortStr = (str:string) => {
         if (str.length > 20) {
             return str.slice(0, 18) + '...';
@@ -37,8 +39,30 @@ const Cart = () => {
                 </div>
             </div>
             <div className={styles.footer}>
-                <div className={styles.productPriceTotal}>1700 Руб</div>
-                <button className={styles.btnSendOrder}>Оформить заказ</button>
+                {isOrderingPage ?
+                    <>
+                        <div className={styles.line}>
+                            <div>1 товар</div>
+                            <div>170 Руб</div>
+                        </div>
+                        <div className={styles.line}>
+                            <div>Скидка</div>
+                            <div>0 Руб</div>
+                        </div>
+                        <div className={styles.line}>
+                            <div>Доставка</div>
+                            <div>Бесплатно</div>
+                        </div>
+                        <div className={styles.line}>
+                            <div className={styles.itemTotal}>Итог</div>
+                            <div className={styles.itemTotal}>170 Руб</div>
+                        </div>
+                    </>:
+                    <>
+                        <div className={styles.productPriceTotal}>1700 Руб</div>
+                        <button className={styles.btnSendOrder}>Оформить заказ</button>
+                    </>
+                }
             </div>
         </div>
     );
