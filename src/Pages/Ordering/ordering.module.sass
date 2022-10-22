@@ -1,0 +1,105 @@
+.wrapper
+  width: 100%
+  padding: 40px 0
+
+  .title
+    font-size: 24px
+    font-weight: 500
+    line-height: 30px
+    margin-bottom: 30px
+
+  .form
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+    .column
+      width: 48%
+
+      .line
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-radius: 5px
+
+        .phone,
+        .name,
+        .change,
+        .comments
+          width: 360px
+          height: 40px
+          font-size: 18px
+          font-weight: 400
+          line-height: 22px
+          border: none
+          border-radius: 5px
+          background-color: #FFFFFF
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
+          margin-bottom: 20px
+          padding: 10px
+
+          &:focus-visible
+            outline: none
+
+          &::placeholder
+            font-size: 18px
+            font-weight: 400
+            line-height: 22px
+            color: #A4ACAD
+
+        .phone
+          width: 174px
+          margin-right: 10px
+
+        .name
+          width: 174px
+
+        .change
+          width: 150px
+          margin-left: 10px
+
+        label
+          padding-bottom: 21px
+
+        .btn,
+        .active
+          width: 174px
+          height: 40px
+          display: flex
+          align-items: center
+          padding: 6px 25px
+          color: #000000
+          line-height: 18px
+          justify-content: center
+          margin-bottom: 20px
+          border-radius: 5px
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
+          background-color: #FFFFFF
+          cursor: pointer
+          margin-right: 10px
+
+          &:last-child
+            margin-right: 0
+
+        .active
+          background-color: #FF9846
+          color: #FFFFFF
+
+        .additional,
+        .count
+          font-weight: 500
+          line-height: 22px
+
+        .group
+          display: flex
+          width: 90px
+          justify-content: flex-end
+          align-items: center
+
+          .count
+            padding: 0 10px
+
+          .icon
+            width: 25px
+            height: 25px
+            cursor: pointer

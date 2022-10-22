@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './header.module.sass'
 import searchIcon from '../../assets/img/search-icon.svg';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
@@ -14,8 +15,8 @@ const Header = () => {
                 <div className={styles.subTitle}>работаем с 10:00 до 00:00</div>
             </div>
             <div className={styles.right}>
-                <a href="#">Отзывы</a>
-                <a href="#">Доставка и оплата</a>
+                <Link to='/reviews'>Отзывы</Link>
+                <Link to='/ordering'>Доставка и оплата</Link>
                 {!isActive && <button className={styles.searchIcon} onClick={() => setIsActive(true)}>
                     <img src={searchIcon} alt='Поиск'/>
                 </button> }
