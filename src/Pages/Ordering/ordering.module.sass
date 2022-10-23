@@ -11,10 +11,12 @@
   .form
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     align-items: flex-start
 
     .column
-      width: 48%
+      min-width: 48%
+      margin-top: 20px
 
       .line
         display: flex
@@ -25,7 +27,13 @@
         .phone,
         .name,
         .change,
-        .comments
+        .comments,
+        .street,
+        .house,
+        .apartment,
+        .entrance,
+        .floor,
+        .email
           width: 360px
           height: 40px
           font-size: 18px
@@ -58,6 +66,21 @@
           width: 150px
           margin-left: 10px
 
+        .street
+          width: 261px
+          margin-right: 10px
+
+        .house
+          width: 87px
+
+        .apartment,
+        .entrance
+          width: 112px
+          margin-right: 10px
+
+        .floor
+          width: 112px
+
         label
           padding-bottom: 21px
 
@@ -89,12 +112,14 @@
         .count
           font-weight: 500
           line-height: 22px
+          padding: 7.5px 0
 
         .group
           display: flex
           width: 90px
           justify-content: flex-end
           align-items: center
+          padding: 7.5px 0
 
           .count
             padding: 0 10px
@@ -103,3 +128,25 @@
             width: 25px
             height: 25px
             cursor: pointer
+
+    .button
+      align-items: center
+      min-width: 174px
+      width: 100%
+      color: #FFFFFF
+      padding: 6px 0
+      border: none
+      border-radius: 5px
+      background-color: #F46D40
+      margin-top: 40px
+      cursor: pointer
+
+  .subText
+    font-size: 14px
+    line-height: 17px
+    font-weight: 400
+    text-align: center
+    margin-top: 10px
+
+    a
+      color: #111111
