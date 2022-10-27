@@ -23,6 +23,12 @@
       cursor: pointer
       transition: 0.2s linear
 
+      @media (max-width: 780px)
+        font-size: 14px
+
+      @media (max-width: 500px)
+        font-size: 12px
+
       &:hover
         color: #FF9846
 
@@ -32,6 +38,12 @@
       font-size: 18px
       line-height: 22px
       margin-bottom: 10px
+
+      @media (max-width: 780px)
+        font-size: 12px
+
+      @media (max-width: 910px)
+        margin-bottom: 5px
 
     .wrapperIcon
       display: flex
@@ -47,6 +59,18 @@
         transition: 0.2s linear
         cursor: pointer
 
+        @media (min-width: 781px) and (max-width: 910px)
+          width: 45px
+          height: 45px
+
+        @media (min-width: 521px) and (max-width: 780px)
+          width: 35px
+          height: 35px
+
+        @media (max-width: 520px)
+          width: 30px
+          height: 30px
+
         &:hover
           opacity: 1
 
@@ -58,6 +82,9 @@
       font-size: 18px
       line-height: 22px
       margin-bottom: 10px
+
+      @media (max-width: 780px)
+        font-size: 14px
 
     .phone
       transition: 0.2s linear

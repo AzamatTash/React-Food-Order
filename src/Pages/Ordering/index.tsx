@@ -97,7 +97,7 @@ const Ordering = () => {
                                 <div className={styles.line}>
                                     <label>
                                         <Field type='checkbox' name='checked'/>
-                                        Подготовить сдачу с
+                                         Сдача с
                                     </label>
                                     <Field disabled={!values.checked}
                                            style={values.checked && errors.change ? {border: '1px solid red'}:

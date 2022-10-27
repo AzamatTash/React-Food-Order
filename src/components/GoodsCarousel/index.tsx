@@ -31,16 +31,16 @@ const GoodsCarousel = (props:any) => {
         pauseOnHover: true,
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     infinite: true,
                     dots: true
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 979,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
@@ -48,10 +48,10 @@ const GoodsCarousel = (props:any) => {
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 526,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
                 }
             }
         ]
@@ -116,8 +116,8 @@ const GoodsCarousel = (props:any) => {
     return (
         <div className={styles.wrapper}>
             <Slider {...settings}>
-                {(props.children || setsList).map((obj:Product) => (
-                    <ProductCard image={obj.image} title={obj.title} weight={obj.description.weight}
+                {(props.children || setsList).map((obj:Product, index:number) => (
+                    <ProductCard key={index} image={obj.image} title={obj.title} weight={obj.description.weight}
                                  quantity={obj.description.quantity} price={obj.price}
                                  isProductPage={props.isProductPage}/>))
                 }

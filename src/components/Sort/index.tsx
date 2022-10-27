@@ -17,7 +17,7 @@ const Sort = () => {
 
     return (
         <div className={isOpen ? styles.sortOpen : styles.sortDefault}
-             tabIndex={0} onBlur={(() => setIsOpen(false))} onClick={() => setIsOpen(!isOpen)}>
+             tabIndex={0} onBlur={() => setIsOpen(false)} onClick={() => setIsOpen(!isOpen)}>
             <div className={styles.title}>Сортировка</div>
             <div className={styles.text}>{currenSort}</div>
             <ul className={styles.list}>

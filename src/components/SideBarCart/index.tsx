@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './sideBarCart.module.sass'
-import Cart from "../Cart";
+import Cart from '../Cart';
+import {Props} from '../Header';
 
-const SideBarCart = () => {
+const SideBarCart = ({isOpenCart}:Props) => {
     const isCartEmpty = false;
     return (
-        <div className={styles.wrapper}>
+        <div className={isOpenCart ? styles.active : styles.wrapper}>
             {
                 isCartEmpty ?
                 <>

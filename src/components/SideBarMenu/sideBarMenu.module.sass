@@ -1,13 +1,21 @@
-.wrapper
+.wrapper,
+.active
   position: fixed
   top: 0
   left: 0
-  z-index: 1000
+  z-index: 1200
   width: 180px
   height: 100%
   padding: 0 10px
   background: #FFFFFF
   overflow: auto
+
+  @media (min-width: 1366px)
+    width: 230px
+
+  @media (max-width: 735px)
+    transform: translateX(-100%)
+    transition: 0.2s linear
 
   .head
     width: 100%
@@ -32,9 +40,10 @@
   .list
     display: flex
     flex-direction: column
-    justify-content: center
-    //padding-left: 20px
-    margin: 0 auto
+    align-items: flex-start
+
+    @media (min-width: 1366px)
+      padding-left: 40px
 
     .item
       display: flex
@@ -55,3 +64,7 @@
 
         &:hover
           color: #FF9846
+
+.active
+  transform: translateX(0)
+  transition: 0.2s linear

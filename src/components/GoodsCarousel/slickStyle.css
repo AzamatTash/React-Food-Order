@@ -1,9 +1,4 @@
-.slick-slide > div {
-    margin: 0 10px;
-}
-
 .slick-list {
-    height: 340px;
     margin: 0 -10px;
 }
 
@@ -19,8 +14,20 @@
     left: -24px;
 }
 
+@media (max-width: 526px) {
+    .slick-prev {
+        left: 24px;
+    }
+}
+
 .slick-next {
     right: -24px;
+}
+
+@media (max-width: 526px) {
+    .slick-next {
+        right: 24px;
+    }
 }
 
 .slick-prev::before,
@@ -30,4 +37,11 @@
     color: black;
     background-color: #FFFFFF;
     cursor: pointer;
+}
+
+@media (max-width: 526px) {
+    .slick-prev::before,
+    .slick-next::before {
+        font-size: 50px;
+    }
 }

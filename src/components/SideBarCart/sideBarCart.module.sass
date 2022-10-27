@@ -1,13 +1,19 @@
-.wrapper
+.wrapper,
+.active
   position: fixed
   top: 0
   right: 0
+  z-index: 1200
   width: 310px
   height: 100vh
   padding: 26px 10px
   text-align: center
   background: #FFFFFF
   overflow: auto
+
+  @media (max-width: 1200px)
+    transform: translateX(100%)
+    transition: 0.2s linear
 
   .title
     font-size: 24px
@@ -27,3 +33,7 @@
     color: #F2F2F2
     font-size: 14px
     line-height: 17px
+
+.active
+  transform: translateX(0)
+  transition: 0.2s linear

@@ -10,16 +10,26 @@ import ProductList from './Pages/ProductsList';
 import Reviews from './Pages/Reviews';
 import {Route, Routes} from 'react-router-dom';
 import Ordering from './Pages/Ordering';
+import MobileMenu from './components/MobileMenu';
 
 function App() {
+    const [isOpenMenu, setIsOpenMenu] = React.useState<boolean>(false);
+    const [isOpenCart, setIsOpenCart] = React.useState<boolean>(false);
+    const isMobile:boolean = false;
+
+    const handleClick = () => {
+        setIsOpenMenu(false);
+        setIsOpenCart(false);
+    }
+
     return (
         <>
-            <SideBarMenu/>
-            <Header/>
-            <SideBarCart/>
-            <div className={styles.container}>
+            <SideBarMenu setIsOpenMenu={setIsOpenMenu} isOpenMenu={isOpenMenu}/>
+            <Header setIsOpenMenu={setIsOpenMenu} setIsOpenCart={setIsOpenCart}/>
+            <SideBarCart isOpenCart={isOpenCart}/>
+            <div className={styles.container} onClick={handleClick}>
                 <Routes>
-                    <Route path='/' element={<Home/>}/>
+                    {isMobile ? <Route path='/' element={<MobileMenu/>}/> : <Route path='/' element={<Home/>}/> }
                     <Route path='/products/:id' element={<ProductList/>}/>
                     <Route path='/reviews' element={<Reviews/>}/>
                     <Route path='/ordering' element={<Ordering/>}/>

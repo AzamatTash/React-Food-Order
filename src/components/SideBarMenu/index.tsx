@@ -12,11 +12,11 @@ import kornsIcon from '../../assets/img/korns-icons.svg';
 import beveragesIcon from '../../assets/img/beverages-icons.svg';
 import StockIcon from '../../assets/img/stock-icons.svg';
 import {Link} from 'react-router-dom';
+import {Props} from '../Header';
 
-
-const SideBarMenu = () => {
-    return (
-        <div className={styles.wrapper}>
+const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:Props) => {
+        return (
+        <div className={isOpenMenu ? styles.active : styles.wrapper} onClick={() => setIsOpenMenu(false)}>
             <div className={styles.head}>
                 <Link to='/'>
                     <img className={styles.logo} src={logoIcon} alt='Лого'/>
