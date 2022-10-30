@@ -6,11 +6,28 @@
   align-items: center
   border-top: 0.5px solid #A4ACAD
 
+  @media (max-width: 465px)
+    flex-direction: column
+    border-bottom: 0.5px solid #A4ACAD
+    margin-bottom: 20px
+
   .item
     width: 33.3%
     height: 119px
     padding: 0 10px 0 10px
     border-right: 0.5px solid #A4ACAD
+
+    @media (max-width: 465px)
+      width: 100%
+      margin-bottom: 10px
+      border-right: none
+
+      &:first-child
+        display: none
+
+      &:last-child
+        height: 85px
+        margin-bottom: 0
 
     &:last-child
       border: none
@@ -39,7 +56,7 @@
       line-height: 22px
       margin-bottom: 10px
 
-      @media (max-width: 780px)
+      @media (min-width: 466px) and (max-width: 780px)
         font-size: 12px
 
       @media (max-width: 910px)
@@ -50,6 +67,9 @@
       justify-content: space-between
       align-items: center
       padding: 10px
+
+      @media (max-width: 465px)
+        justify-content: center
 
       .socialIcon
         display: block
@@ -67,12 +87,22 @@
           width: 35px
           height: 35px
 
-        @media (max-width: 520px)
+        @media (min-width: 466px) and (max-width: 520px)
+          opacity: 1
           width: 30px
           height: 30px
 
+        @media (max-width: 465px)
+          margin-right: 15px
+
+          &:last-child
+            margin-right: 0
+
         &:hover
           opacity: 1
+
+    .phone
+      margin-bottom: 10px
 
     .phone,
     .address
@@ -81,9 +111,8 @@
       text-align: center
       font-size: 18px
       line-height: 22px
-      margin-bottom: 10px
 
-      @media (max-width: 780px)
+      @media (min-width: 466px) and (max-width: 780px)
         font-size: 14px
 
     .phone

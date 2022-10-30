@@ -17,10 +17,9 @@
   @media (max-width: 735px)
     padding-left: 20px
 
-
-
   .left
     display: flex
+    justify-content: space-between
     align-items: center
     font-size: 18px
     font-weight: 500
@@ -29,34 +28,72 @@
     @media (max-width: 540px)
       font-size: 14px
 
+    @media (max-width: 459px)
+      width: 100%
+      max-width: 356px
+
+    @media (max-width: 412px)
+      font-size: 12px
+
     .menuIcon
-      display: block
+      display: none
       width: 25px
       height: 25px
       object-fit: cover
       cursor: pointer
       margin-right: 20px
 
-      @media (min-width: 735px)
-        display: none
+      @media (min-width: 481px) and (max-width: 735px)
+        display: block
 
       @media (max-width: 540px)
         margin-right: 10px
 
-    .title
-      line-height: 22px
+    .logoIcon
+      display: none
+      width: 40px
+      height: 40px
+      margin-right: 10px
 
-    .phone
-      display: block
-      line-height: 18px
-      color: #FF9846
-      text-decoration: none
+      @media (max-width: 480px)
+        display: block
 
-    .subTitle
-      font-size: 14px
-      line-height: 17px
-      color: #A4ACAD
-      margin-top: 5px
+    .info
+      @media (max-width: 459px)
+        display: flex
+        justify-content: space-between
+
+      .infoLeft
+        .title
+          line-height: 22px
+
+        .phone
+          display: block
+          line-height: 18px
+          color: #FF9846
+          text-decoration: none
+
+      .infoRight
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin: 0 5px 0 10px
+
+        @media (max-width: 459px)
+          width: 40%
+
+        .watchIcon
+          @media (min-width: 460px)
+            display: none
+
+        .subTitle
+          font-size: 14px
+          line-height: 17px
+          color: #A4ACAD
+          margin-top: 5px
+
+          @media (max-width: 412px)
+            font-size: 12px
 
   .right
     display: flex
@@ -66,12 +103,19 @@
     @media (max-width: 524px)
       justify-self: flex-end
 
+    @media (max-width: 360px)
+      flex-direction: column
+      align-items: flex-end
+
     .links
       display: flex
 
       @media (max-width: 615px)
         flex-direction: column
         align-items: flex-end
+
+      @media (max-width: 459px)
+        display: none
 
       a
         font-size: 18px
@@ -90,6 +134,9 @@
           color: #FF9846
 
     .searchIcon
+      display: block
+      width: 40px
+      height: 40px
       background-color: transparent
       border: none
       cursor: pointer
@@ -98,6 +145,7 @@
       position: absolute
       top: 47px
       right: 5px
+      z-index: 2000
 
       .input
         height: 40px
@@ -119,17 +167,18 @@
           color: #A4ACAD
 
     .cartIcon
-      display: block
+      display: none
       width: 40px
       height: 40px
       object-fit: cover
       cursor: pointer
       position: relative
 
-      @media (min-width: 1200px)
-        display: none
+      @media (min-width: 481px) and (max-width: 1200px)
+        display: block
 
     .count
+      display: none
       position: absolute
       color: #FFFFFF
       font-size: 12px
@@ -139,5 +188,5 @@
       top: 0
       right: 0
 
-      @media (min-width: 1200px)
-        display: none
+      @media (min-width: 481px) and (max-width: 1200px)
+        display: block

@@ -20,10 +20,11 @@ interface FormValues {
 }
 
 const Ordering = () => {
-    const [count, setCount] = React.useState<number>(1);
     const [payActive, setPayActive] = React.useState<number>(0);
     const [deliveryActive, setDeliveryActive] = React.useState<number>(1);
     const [deliveryTime, setDeliveryTime] = React.useState<number>(0);
+    const [checked, setChecked] = React.useState<boolean>(false);
+    const [additionalServices, setAdditionalServices] = React.useState<number>(1);
 
     const payMethodList: string[] = ['Наличными', 'Картой'];
     // const payMethod = payMethodList[payActive];
@@ -66,7 +67,7 @@ const Ordering = () => {
     });
 
     const onSubmit = (values:FormValues) => {
-        console.log(values);
+        console.log({...values, additionalServices});
     };
 
     return (
@@ -80,84 +81,84 @@ const Ordering = () => {
                 {(props:FormikProps<FormValues>) => {
                     const { errors, values } = props;
                     return (
-                        <Form className={styles.form}>
-                            <div className={styles.column}>
-                                <div className={styles.line}>
-                                    <Field style={errors.phone && {border: '1px solid red'}} name='phone'
-                                        className={styles.phone} placeholder='Телефон'/>
-                                    <Field style={errors.name && {border: '1px solid red'}} name='name'
-                                        className={styles.name} placeholder='Имя'/>
+                        <Form>
+                            <div className={styles.form}>
+                                <div className={styles.column}>
+                                    <div className={styles.line}>
+                                        <Field style={errors.phone && {border: '1px solid red'}} name='phone'
+                                               className={styles.phone} placeholder='Телефон'/>
+                                        <Field style={errors.name && {border: '1px solid red'}} name='name'
+                                               className={styles.name} placeholder='Имя'/>
+                                    </div>
+                                    <div className={styles.line}>
+                                        {payMethodList.map((item:string, index:number) => (
+                                            <div key={index} className={payActive === index ? styles.active : styles.btn}
+                                                 onClick={() => setPayActive(index)}>{item}</div>
+                                        ))}
+                                    </div>
+                                    <div className={styles.line}>
+                                        <Field type='checkbox' checked={checked} onClick={() => setChecked(!checked)} id='checkbox' className={styles.checkbox} name='checked'/>
+                                        <label htmlFor='checkbox'>Сдача с</label>
+                                        <Field disabled={!values.checked}
+                                               style={values.checked && errors.change ? {border: '1px solid red'}:
+                                                   {border: 'none'}}
+                                               value={!values.checked ? '' : values.change} name='change'
+                                               className={styles.change} placeholder='Сумма'/>
+                                    </div>
+                                    <div className={styles.line}>
+                                        <Field name='comments' className={styles.comments} placeholder='Комментарий'/>
+                                    </div>
+                                    <div className={styles.line}>
+                                        <div className={styles.additional}>Палочки + соусник обычные</div>
+                                        <div className={styles.group}>
+                                            {additionalServices > 1 && <img className={styles.icon} src={downCount} alt='-'
+                                                               onClick={() => setAdditionalServices(additionalServices - 1)}/> }
+                                            <div className={styles.count}>{additionalServices}</div>
+                                            <img className={styles.icon} src={upCount} alt='+'
+                                                 onClick={() => setAdditionalServices(additionalServices + 1)}/>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={styles.line}>
-                                    {payMethodList.map((item:string, index:number) => (
-                                        <div key={index} className={payActive === index ? styles.active : styles.btn}
-                                             onClick={() => setPayActive(index)}>{item}</div>
-                                    ))}
-                                </div>
-                                <div className={styles.line}>
-                                    <label>
-                                        <Field type='checkbox' name='checked'/>
-                                         Сдача с
-                                    </label>
-                                    <Field disabled={!values.checked}
-                                           style={values.checked && errors.change ? {border: '1px solid red'}:
-                                               {border: 'none'}}
-                                           value={!values.checked ? '' : values.change} name='change'
-                                           className={styles.change} placeholder='Сумма'/>
-                                </div>
-                                <div className={styles.line}>
-                                    <Field name='comments' className={styles.comments} placeholder='Комментарий'/>
-                                </div>
-                                <div className={styles.line}>
-                                    <div className={styles.additional}>Палочки + соусник обычные</div>
-                                    <div className={styles.group}>
-                                        {count > 1 && <img className={styles.icon} src={downCount} alt='-'
-                                                           onClick={() => setCount(count - 1)}/> }
-                                        <div className={styles.count}>{count}</div>
-                                        <img className={styles.icon} src={upCount} alt='+'
-                                            onClick={() => setCount(count + 1)}/>
+                                <div className={styles.column}>
+                                    <div className={styles.line}>
+                                        {deliveryList.map((item:string, index:number) => (
+                                            <div key={index} className={deliveryActive === index ? styles.active : styles.btn}
+                                                 onClick={() => setDeliveryActive(index)}>{item}</div>
+                                        ))}
+                                    </div>
+                                    <div className={styles.line}>
+                                        <Field style={errors.street && !deliveryMethodCurrent ?
+                                            {border: '1px solid red'} : {border: 'none'}} name='street'
+                                               className={styles.street} placeholder='Улица'
+                                               disabled={deliveryMethod === deliveryList[1]}/>
+                                        <Field style={errors.house && !deliveryMethodCurrent ?
+                                            {border: '1px solid red'} : {border: 'none'}} name='house'
+                                               className={styles.house} placeholder='Дом'
+                                               disabled={deliveryMethod === deliveryList[1]}/>
+                                    </div>
+                                    <div className={styles.line}>
+                                        <Field style={errors.apartment && {border: '1px solid red'}} name='apartment'
+                                               className={styles.apartment} placeholder='Квартира'
+                                               disabled={deliveryMethod === deliveryList[1]}/>
+                                        <Field style={errors.entrance && {border: '1px solid red'}} name='entrance'
+                                               className={styles.entrance} placeholder='Подъезд'
+                                               disabled={deliveryMethod === deliveryList[1]}/>
+                                        <Field style={errors.floor && {border: '1px solid red'}} name='floor'
+                                               className={styles.floor} placeholder='Этаж'
+                                               disabled={deliveryMethod === deliveryList[1]}/>
+                                    </div>
+                                    <div className={styles.line}>
+                                        {deliveryTimeList.map((item:string, index:number) => (
+                                            <div key={index} className={deliveryTime === index ? styles.active : styles.btn}
+                                                 onClick={() => setDeliveryTime(index)}>{item}</div>
+                                        ))}
+                                    </div>
+                                    <div className={styles.line}>
+                                        <Field name='email' className={styles.email} placeholder='Email (необязательно)'/>
                                     </div>
                                 </div>
                             </div>
-                            <div className={styles.column}>
-                                <div className={styles.line}>
-                                    {deliveryList.map((item:string, index:number) => (
-                                        <div key={index} className={deliveryActive === index ? styles.active : styles.btn}
-                                             onClick={() => setDeliveryActive(index)}>{item}</div>
-                                    ))}
-                                </div>
-                                <div className={styles.line}>
-                                    <Field style={errors.street && !deliveryMethodCurrent ?
-                                        {border: '1px solid red'} : {border: 'none'}} name='street'
-                                           className={styles.street} placeholder='Улица'
-                                           disabled={deliveryMethod === deliveryList[1]}/>
-                                    <Field style={errors.house && !deliveryMethodCurrent ?
-                                        {border: '1px solid red'} : {border: 'none'}} name='house'
-                                           className={styles.house} placeholder='Дом'
-                                           disabled={deliveryMethod === deliveryList[1]}/>
-                                </div>
-                                <div className={styles.line}>
-                                    <Field style={errors.apartment && {border: '1px solid red'}} name='apartment'
-                                           className={styles.apartment} placeholder='Квартира'
-                                           disabled={deliveryMethod === deliveryList[1]}/>
-                                    <Field style={errors.entrance && {border: '1px solid red'}} name='entrance'
-                                           className={styles.entrance} placeholder='Подъезд'
-                                           disabled={deliveryMethod === deliveryList[1]}/>
-                                    <Field style={errors.floor && {border: '1px solid red'}} name='floor'
-                                           className={styles.floor} placeholder='Этаж'
-                                           disabled={deliveryMethod === deliveryList[1]}/>
-                                </div>
-                                <div className={styles.line}>
-                                    {deliveryTimeList.map((item:string, index:number) => (
-                                        <div key={index} className={deliveryTime === index ? styles.active : styles.btn}
-                                             onClick={() => setDeliveryTime(index)}>{item}</div>
-                                    ))}
-                                </div>
-                                <div className={styles.line}>
-                                    <Field name='email' className={styles.email} placeholder='Email (необязательно)'/>
-                                </div>
-                            </div>
-                            <button className={styles.button}>Оформить заказ</button>
+                            <button type='button' className={styles.button}>Оформить заказ</button>
                         </Form>
                     )
                 }}
