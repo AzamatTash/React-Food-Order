@@ -3,7 +3,7 @@ import styles from './productList.module.sass';
 import setsIcon from '../../assets/img/sets-icon.svg';
 import Sort from '../../components/Sort';
 import ProductCard from '../../components/ProductCard';
-import {useParams} from "react-router-dom";
+// import {useParams} from "react-router-dom";
 
 const ProductList = () => {
     const setsProductList = [
@@ -104,8 +104,7 @@ const ProductList = () => {
             price: 2009,
         },
     ]
-    const params = useParams();
-    console.log(params.id);
+    // const params = useParams();
 
     return (
         <div className={styles.wrapper}>
@@ -120,7 +119,7 @@ const ProductList = () => {
             </div>
             <div className={styles.content}>
                 {setsProductList.map(obj => (
-                    <ProductCard className={styles.item} image={obj.image} title={obj.title}
+                    <ProductCard key={obj.id} className={styles.item} id={obj.id} image={obj.image} title={obj.title}
                                  weight={obj.weight} quantity={obj.quantity} price={obj.price}/>
                 ))}
             </div>

@@ -31,8 +31,9 @@ const Reviews = () => {
                 'Успехов Вам и приятных бонусов нам )',
         },
     ])
-
     const [openForm, setOpenForm] = React.useState<boolean>(false);
+
+    React.useEffect(() => window.scroll(0,0), []);
 
     const initialValues:Data = {
         name: '',

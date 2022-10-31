@@ -1,38 +1,38 @@
 import React from 'react';
 import styles from './categorias.module.sass';
-import catImgChicken from '../../assets/img/cat-img-1.jpg';
-import catImgPizza from '../../assets/img/cat-img-2.jpg';
-import catImgWithUgr from '../../assets/img/cat-img-3.jpg';
-import catImgKornDog from '../../assets/img/cat-img-4.jpg';
-import catImgStoke from '../../assets/img/cat-img-5.jpg';
+import categoriPizza from '../../assets/img/categori-pizza.jpg';
+import categoriKornDog from '../../assets/img/categori-korndog.png';
+import categoriSets from '../../assets/img/categori-sets.jpg';
+import categoriWok from '../../assets/img/categori-wok.jpg';
+import categoriSushi from '../../assets/img/categori-sushi.jpg';
 
 const Categorias = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.column}>
                 <div className={styles.item}>
-                    <img src={catImgChicken} alt='chicken'/>
-                    <div className={styles.title}>Чикен</div>
+                    <img src={categoriSets} alt='sets'/>
+                    <div className={styles.title}>Сеты</div>
                 </div>
                 <div className={styles.item}>
-                    <img src={catImgPizza} alt='pizza'/>
+                    <img src={categoriPizza} alt='pizza'/>
                     <div className={styles.title}>Пицца</div>
                 </div>
             </div>
             <div className={styles.column}>
                 <div className={styles.row}>
                     <div className={styles.itemRow}>
-                        <img src={catImgWithUgr} alt='With ugr'/>
-                        <div className={styles.title}>С угрем</div>
+                        <img src={categoriSushi} alt='Sushi'/>
+                        <div className={styles.title}>Суши</div>
                     </div>
                     <div className={styles.itemRow}>
-                        <img src={catImgKornDog} alt='korn-dog'/>
+                        <img src={categoriKornDog} alt='korn-dog'/>
                         <div className={styles.title}>Корн дог</div>
                     </div>
                 </div>
                 <div className={styles.item}>
-                    <img src={catImgStoke} alt='stoke'/>
-                    <div className={styles.title}>Акции</div>
+                    <img src={categoriWok} alt='wok'/>
+                    <div className={styles.title}>WOK</div>
                 </div>
             </div>
         </div>

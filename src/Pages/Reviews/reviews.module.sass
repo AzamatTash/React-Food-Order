@@ -2,6 +2,9 @@
   width: 100%
   padding: 40px 0
 
+  @media (max-width: 480px)
+    padding: 20px 0
+
   .header
     display: flex
     align-items: center
@@ -24,6 +27,9 @@
       border-radius: 5px
       cursor: pointer
       transition: 0.2s linear
+
+      @media (max-width: 380px)
+        font-size: 14px
 
       &:hover
         background-color: lighten(#111111, 15%)
@@ -95,6 +101,10 @@
       border-radius: 5px
       box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
 
+      &:last-child
+        margin-bottom: 0
+
+
       .header
         display: flex
         justify-content: space-between
@@ -107,12 +117,22 @@
           line-height: 30px
           margin-right: 20px
 
+          @media (max-width: 380px)
+            font-size: 18px
+
         .date
           font-weight: 500
           line-height: 22px
           color: #A4ACAD
 
+          @media (max-width: 380px)
+            font-size: 14px
+
+
       .text
         font-size: 18px
         font-weight: 400
         line-height: 22px
+
+        @media (max-width: 380px)
+          font-size: 16px

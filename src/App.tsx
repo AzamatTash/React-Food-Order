@@ -10,6 +10,7 @@ import ProductList from './Pages/ProductsList';
 import Reviews from './Pages/Reviews';
 import {Route, Routes} from 'react-router-dom';
 import Ordering from './Pages/Ordering';
+import FooterBar from "./components/FooterBar";
 
 function App() {
     const [isOpenMenu, setIsOpenMenu] = React.useState<boolean>(false);
@@ -34,6 +35,7 @@ function App() {
                     {/*<ProductPage/>*/}
                 </Routes>
                 <Footer/>
+                <FooterBar/>
             </div>
         </>
     );

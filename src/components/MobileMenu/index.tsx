@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './mobileMenu.module.sass';
-import pizzaIcon from '../../assets/img/menu-pizza.jpg';
-import setsIcon from '../../assets/img/menu-sets.jpg';
-import wokIcon from '../../assets/img/menu-wok.jpg';
-import rollsIcon from '../../assets/img/menu-rols.jpg';
-import sushiIcon from '../../assets/img/menu-sushi.jpg';
-import supsIcon from '../../assets/img/menu-sups.jpg';
-import salatsIcon from '../../assets/img/menu-salats.jpg';
-import korndogsIcon from '../../assets/img/menu-korndogs.jpg';
+import pizzaIcon from '../../assets/img/menu-pizza.png';
+import setsIcon from '../../assets/img/menu-sets.png';
+import wokIcon from '../../assets/img/menu-wok.png';
+import rollsIcon from '../../assets/img/menu-rolls.png';
+import sushiIcon from '../../assets/img/menu-sushi.png';
+import supsIcon from '../../assets/img/menu-sups.png';
+import salatsIcon from '../../assets/img/menu-salats.png';
+import korndogsIcon from '../../assets/img/menu-korndog.png';
 
 const MobileMenu = () => {
     return (

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './header.module.sass'
 import searchIcon from '../../assets/img/search-icon.svg';
 import menuIcon from '../../assets/img/open-menu-icon.svg';
-import cartIcon from '../../assets/img/cart-icon.png';
+import cartIcon from '../../assets/img/cart-icon.svg';
 import logoIcon from '../../assets/img/logo-icons.svg';
 import iconWatch from '../../assets/img/icon-watch.svg';
 import {Link} from 'react-router-dom';

@@ -6,6 +6,8 @@ import MobileMenu from '../../components/MobileMenu';
 
 
 const Home = () => {
+    React.useEffect(() => window.scroll(0,0), []);
+
     return (
         <div>
             <MobileMenu/>

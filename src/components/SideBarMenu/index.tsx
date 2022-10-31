@@ -9,8 +9,6 @@ import sushiIcon from '../../assets/img/sushi-icon.svg';
 import salatsIcon from '../../assets/img/salats-icon.svg';
 import supsIcon from '../../assets/img/sups-icon.svg';
 import kornsIcon from '../../assets/img/korns-icons.svg';
-import beveragesIcon from '../../assets/img/beverages-icons.svg';
-import StockIcon from '../../assets/img/stock-icons.svg';
 import {Link} from 'react-router-dom';
 import {Props} from '../Header';
 
@@ -55,14 +53,6 @@ const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:Props) => {
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={kornsIcon} alt="pizzaIcon"/>
                     <Link to='/products/corn_dogs' className={styles.itemTitle}>Корн-доги</Link>
-                </li>
-                <li className={styles.item}>
-                    <img className={styles.itemIcon} src={beveragesIcon} alt="pizzaIcon"/>
-                    <Link to='/products/beverages' className={styles.itemTitle}>Напитки</Link>
-                </li>
-                <li className={styles.item}>
-                    <img className={styles.itemIcon} src={StockIcon} alt="pizzaIcon"/>
-                    <Link to='/products/stock' className={styles.itemTitle}>Акции</Link>
                 </li>
             </ul>
         </div>
