@@ -10,7 +10,8 @@ import ProductList from './Pages/ProductsList';
 import Reviews from './Pages/Reviews';
 import {Route, Routes} from 'react-router-dom';
 import Ordering from './Pages/Ordering';
-import FooterBar from "./components/FooterBar";
+import FooterBar from './components/FooterBar';
+import Cart from "./Pages/Cart";
 
 function App() {
     const [isOpenMenu, setIsOpenMenu] = React.useState<boolean>(false);
@@ -32,6 +33,7 @@ function App() {
                     <Route path='/products/:id' element={<ProductList/>}/>
                     <Route path='/reviews' element={<Reviews/>}/>
                     <Route path='/ordering' element={<Ordering/>}/>
+                    <Route path='/cart' element={<Cart/>}/>
                     {/*<ProductPage/>*/}
                 </Routes>
                 <Footer/>

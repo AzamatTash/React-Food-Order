@@ -12,7 +12,7 @@ const FooterBar = () => {
                 <img src={menuIcon} alt='меню'/>
                 <div className={styles.title}>Меню</div>
             </Link>
-            <Link to='/ordering' className={styles.item}>
+            <Link to='/cart' className={styles.item}>
                 <img src={cartIcon} alt='козина'/>
                 <div className={styles.title}>Корзина</div>
             </Link>

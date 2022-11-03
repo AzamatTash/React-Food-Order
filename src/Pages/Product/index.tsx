@@ -68,7 +68,9 @@ const Product = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.btn}>
-                <div><img src={backIcon} alt='Назад'/></div>
+                <div>
+                    <img src={backIcon} alt='Назад'/>
+                </div>
                 <div className={styles.text}>Назад</div>
             </div>
             <MoreProductInfo/>

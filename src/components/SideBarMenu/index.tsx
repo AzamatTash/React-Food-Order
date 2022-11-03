@@ -24,7 +24,8 @@ const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:Props) => {
             <ul className={styles.list}>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={pizzaIcon} alt="pizzaIcon"/>
-                    <Link to='/products/pizzas' className={styles.itemTitle}>Пицца</Link>
+                    <div className={styles.itemTitle}>Пицца</div>
+                    <div className={styles.placeholder}>скоро</div>
                 </li>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={setsIcon} alt="pizzaIcon"/>
@@ -36,7 +37,8 @@ const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:Props) => {
                 </li>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={rolsIcon} alt="pizzaIcon"/>
-                    <Link to='/products/rolls' className={styles.itemTitle}>Роллы</Link>
+                    <div className={styles.itemTitle}>Роллы</div>
+                    <div className={styles.placeholder}>скоро</div>
                 </li>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={sushiIcon} alt="pizzaIcon"/>
@@ -44,15 +46,17 @@ const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:Props) => {
                 </li>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={salatsIcon} alt="pizzaIcon"/>
-                    <Link to='/products/salads' className={styles.itemTitle}>Салаты</Link>
+                    <div className={styles.itemTitle}>Салаты</div>
+                    <div className={styles.placeholder}>скоро</div>
                 </li>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={supsIcon} alt="pizzaIcon"/>
-                    <Link to='/products/soups' className={styles.itemTitle}>Супы</Link>
+                    <Link to='/products/sups' className={styles.itemTitle}>Супы</Link>
                 </li>
                 <li className={styles.item}>
                     <img className={styles.itemIcon} src={kornsIcon} alt="pizzaIcon"/>
-                    <Link to='/products/corn_dogs' className={styles.itemTitle}>Корн-доги</Link>
+                    <div className={styles.itemTitle}>Корн-доги</div>
+                    <div className={styles.placeholder}>скоро</div>
                 </li>
             </ul>
         </div>

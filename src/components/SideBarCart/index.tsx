@@ -1,20 +1,19 @@
 import React from 'react';
 import styles from './sideBarCart.module.sass'
-import Cart from '../Cart';
+import CartNotEmpty from '../CartNotEmpty';
+import CartIsEmpty from '../CartIsEmpty';
 import {Props} from '../Header';
+import {useLocation} from 'react-router-dom';
 
 const SideBarCart = ({isOpenCart}:Props) => {
-    const isCartEmpty = false;
+    const location = useLocation();
+    const isOrderingPage = location.pathname === '/ordering'
+
+    const isCartEmpty = true;
     return (
         <div className={isOpenCart ? styles.active : styles.wrapper}>
             {
-                isCartEmpty ?
-                <>
-                    <div className={styles.title}>Выша корзина пуста.</div>
-                    <div className={styles.subTitle}>Добавте же скорее что-нибудь!</div>
-                    <div className={styles.orderPrice}>Бесплатная доставка от 800 руб.</div>
-                </> :
-                <Cart/>
+                isCartEmpty ?  <CartIsEmpty/> : <CartNotEmpty isOrderingPage={isOrderingPage}/>
             }
         </div>
     );

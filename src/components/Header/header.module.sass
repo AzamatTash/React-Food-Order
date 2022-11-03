@@ -26,14 +26,14 @@
     text-align: center
 
     @media (max-width: 540px)
-      font-size: 14px
+      font-size: 16px
 
     @media (max-width: 459px)
       width: 100%
       max-width: 356px
 
-    @media (max-width: 412px)
-      font-size: 12px
+    @media (max-width: 376px)
+      font-size: 14px
 
     .menuIcon
       display: none
@@ -62,6 +62,7 @@
       @media (max-width: 459px)
         display: flex
         justify-content: space-between
+        align-items: center
 
       .infoLeft
         .title
@@ -72,6 +73,10 @@
           line-height: 18px
           color: #FF9846
           text-decoration: none
+
+          @media (max-width: 349px)
+            line-height: 16px
+            font-size: 12px
 
       .infoRight
         display: flex
@@ -93,7 +98,7 @@
           margin-top: 5px
 
           @media (max-width: 412px)
-            font-size: 12px
+            font-size: 14px
 
   .right
     display: flex
