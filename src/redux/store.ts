@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import products from './slices/productsSlice';
+import sort from './slices/sortSlice';
 
 export const store = configureStore({
     reducer: {
-        products
+        products,
+        sort
     },
 });
 

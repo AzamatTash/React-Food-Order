@@ -7,6 +7,13 @@ import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchProducts, productsList} from '../../redux/slices/productsSlice';
 import {AppDispatch} from '../../redux/store';
+import {currentSort} from '../../redux/slices/sortSlice';
+
+export type ParamsType = {
+    path: string;
+    sortType: string;
+    orderType: string;
+}
 
 const ProductList = () => {
     const title = {
@@ -18,16 +25,18 @@ const ProductList = () => {
         sushi: 'Суши'
     };
 
-    const params = useParams();
-    const path = params.id;
+    const paramsUrl = useParams();
+    const path = paramsUrl.id;
     const currentTitle = title[path as keyof typeof title];
 
     const dispatch = useDispatch<AppDispatch>();
     const {items} = useSelector(productsList);
+    const {sortType, orderType} = useSelector(currentSort)
 
     React.useEffect(() => {
         if (path != null) {
-            dispatch(fetchProducts(path))
+            const params:ParamsType = {path, sortType, orderType};
+            dispatch(fetchProducts(params))
         }
     },[currentTitle]);
 

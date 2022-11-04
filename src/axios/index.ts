@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 export const api = {
-    getProducts(params:string) {
-        return instance.get(`${params}`);
+    getProducts(path:string, sortType:string, orderType:string) {
+        return instance.get(`${path}?sortBy=${sortType}&order=${orderType}`);
     }
 };

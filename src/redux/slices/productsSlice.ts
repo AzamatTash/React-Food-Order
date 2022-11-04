@@ -1,11 +1,13 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {api} from '../../axios';
 import {RootState} from '../store';
+import {ParamsType} from '../../Pages/ProductsList';
 
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
-    async (params:string) => {
-        const {data} = await api.getProducts(params);
+    async (params:ParamsType) => {
+        const {path, sortType, orderType} = params;
+        const {data} = await api.getProducts(path, sortType, orderType);
         return data;
     }
 );
@@ -18,12 +20,12 @@ type ProductState = {
     quantity?: number;
     composition?: string
     price: number;
-}
+};
 
 type ProductsState = {
     items: ProductState[];
     status: string;
-}
+};
 
 const initialState:ProductsState = {
     items: [
@@ -40,7 +42,7 @@ const initialState:ProductsState = {
     status: 'loading'
 };
 
-export const productsSlice = createSlice({
+const productsSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {},
