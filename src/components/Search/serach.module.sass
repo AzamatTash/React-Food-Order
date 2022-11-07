@@ -1,0 +1,40 @@
+.form
+  width: 100%
+  margin-top: 30px
+  position: relative
+
+  @media (max-width: 480px)
+    margin-top: 20px
+
+  .input
+    width: 100%
+    height: 40px
+    font-size: 18px
+    font-weight: 400
+    line-height: 22px
+    background-color: #FFFFFF
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
+    border-radius: 5px
+    border: 0.5px solid #A4ACAD
+    padding: 10px
+
+    &::placeholder
+      font-size: 18px
+      font-weight: 400
+      line-height: 22px
+      color: #A4ACAD
+
+    &:focus-visible
+      outline: none
+      outline-offset: 0
+
+  .searchIcon
+    display: block
+    position: absolute
+    top: 3px
+    right: 10px
+    width: 35px
+    height: 35px
+    background-color: transparent
+    border: none
+    cursor: pointer

@@ -1,27 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './header.module.sass'
-import searchIcon from '../../assets/img/search-icon.svg';
 import menuIcon from '../../assets/img/open-menu-icon.svg';
 import cartIcon from '../../assets/img/cart-icon.svg';
 import logoIcon from '../../assets/img/logo-icons.svg';
 import iconWatch from '../../assets/img/icon-watch.svg';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 export type Props = {
     setIsOpenMenu?: any,
     isOpenMenu?: boolean,
     setIsOpenCart?: any,
     isOpenCart?: boolean
-}
+};
 
 const Header = ({setIsOpenMenu, setIsOpenCart}:Props) => {
-    const [isActive, setIsActive] = useState<boolean>(false);
+    const navigate = useNavigate();
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.left}>
-                <img className={styles.menuIcon} src={menuIcon} alt='меню' onClick={() => setIsOpenMenu(true) }/>
-                <img className={styles.logoIcon} src={logoIcon} alt='лого'/>
+                <img className={styles.menuIcon} src={menuIcon} alt='меню' onClick={() => setIsOpenMenu(true)}/>
+                <img className={styles.logoIcon} src={logoIcon} alt='лого' onClick={() => navigate('/')}/>
                 <div className={styles.info}>
                     <div className={styles.infoLeft}>
                         <div className={styles.title}>Наш телефон</div>
@@ -39,13 +38,6 @@ const Header = ({setIsOpenMenu, setIsOpenCart}:Props) => {
                     <Link to='/reviews'>Отзывы</Link>
                     <Link to='/ordering'>Доставка и оплата</Link>
                 </div>
-                <button className={styles.searchIcon} onClick={() => setIsActive(true)}>
-                    <img src={searchIcon} alt='Поиск'/>
-                </button>
-                {isActive && <form className={styles.form}>
-                    <input autoFocus={true} tabIndex={0} onBlur={() => setIsActive(false)}
-                           type="text" className={styles.input} placeholder='поиск...'/>
-                </form>}
                 <img className={styles.cartIcon} src={cartIcon} alt='меню' onClick={() => setIsOpenCart(true) }/>
                 <div className={styles.count}>0</div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './productCard.module.sass'
 import upCountIcon from '../../assets/img/up-count.svg';
+import {Link} from 'react-router-dom';
 
 const ProductCard = (props:any) => {
     return (
@@ -8,7 +9,9 @@ const ProductCard = (props:any) => {
             <img src={props.image} className={props.isProductPage ? styles.img : styles.imgInitial}
                  alt='imgSet'/>
             <div>
-                <h1 className={styles.title}>{props.title}</h1>
+                <Link to={`/products/${props.path}/${props.id}`}>
+                    <div className={styles.title}>{props.title}</div>
+                </Link>
                 <div className={styles.footer}>
                     {props.isProductPage ? '' :
                         <h3 className={styles.subTitle}>{props.weight} грамм  {props.quantity}

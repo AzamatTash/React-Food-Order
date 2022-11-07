@@ -17,6 +17,10 @@
   @media (max-width: 735px)
     padding-left: 20px
 
+  @media (max-width: 459px)
+    flex-direction: column
+    padding-top: 18.5px
+
   .left
     display: flex
     justify-content: space-between
@@ -58,8 +62,13 @@
       @media (max-width: 480px)
         display: block
 
+      @media (max-width: 459px)
+        width: 50px
+        height: 50px
+
     .info
       @media (max-width: 459px)
+        width: 100%
         display: flex
         justify-content: space-between
         align-items: center
@@ -137,39 +146,6 @@
 
         &:hover
           color: #FF9846
-
-    .searchIcon
-      display: block
-      width: 40px
-      height: 40px
-      background-color: transparent
-      border: none
-      cursor: pointer
-
-    .form
-      position: absolute
-      top: 47px
-      right: 5px
-      z-index: 2000
-
-      .input
-        height: 40px
-        font-size: 18px
-        font-weight: 400
-        line-height: 22px
-        border: none
-        border-radius: 5px
-        background-color: #FFFFFF
-        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1)
-        margin-bottom: 10px
-        padding: 10px
-        outline: 2px solid #FF9846
-
-        &::placeholder
-          font-size: 18px
-          font-weight: 400
-          line-height: 22px
-          color: #A4ACAD
 
     .cartIcon
       display: none

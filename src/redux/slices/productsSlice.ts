@@ -12,8 +12,8 @@ export const fetchProducts = createAsyncThunk(
     }
 );
 
-type ProductState = {
-    id: string;
+export type ProductState = {
+    id?: string;
     title: string;
     image: string;
     weight: number;
