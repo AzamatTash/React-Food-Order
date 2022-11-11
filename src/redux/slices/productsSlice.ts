@@ -6,8 +6,8 @@ import {ParamsType} from '../../Pages/ProductsList';
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
     async (params:ParamsType) => {
-        const {path, sortType, orderType} = params;
-        const {data} = await api.getProducts(path, sortType, orderType);
+        const {path, sortType, orderType, searchValue} = params;
+        const {data} = await api.getProducts(path, sortType, orderType, searchValue);
         return data;
     }
 );
@@ -58,10 +58,11 @@ const productsSlice = createSlice({
         [fetchProducts.rejected.toString()]: (state:ProductsState) => {
             state.items = [];
             state.status = 'error';
-        },
+        }
     }
 });
 
 export const productsList = (state:RootState) => state.products;
+
 const products = productsSlice.reducer;
 export default products;

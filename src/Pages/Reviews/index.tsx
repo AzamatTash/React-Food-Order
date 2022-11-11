@@ -4,7 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {getConvertDate} from '../../utils/convertDate';
 
-interface Data {
+type Data = {
     name: string;
     review: string;
     date: string;

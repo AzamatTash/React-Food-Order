@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from './app.module.sass';
+import {Route, Routes} from 'react-router-dom';
+
 import SideBarMenu from './components/SideBarMenu';
 import SideBarCart from './components/SideBarCart';
 import Header from './components/Header';
-import Home from './Pages/Home';
 import Footer from './components/Footer';
+import FooterBar from './components/FooterBar';
+import Home from './Pages/Home';
 import Product from './Pages/Product';
 import ProductList from './Pages/ProductsList';
 import Reviews from './Pages/Reviews';
-import {Route, Routes} from 'react-router-dom';
 import Ordering from './Pages/Ordering';
-import FooterBar from './components/FooterBar';
 import Cart from './Pages/Cart';
-import Search from "./components/Search";
 
 function App() {
     const [isOpenMenu, setIsOpenMenu] = React.useState<boolean>(false);
@@ -29,7 +29,6 @@ function App() {
             <Header setIsOpenMenu={setIsOpenMenu} setIsOpenCart={setIsOpenCart}/>
             <SideBarCart isOpenCart={isOpenCart}/>
             <div className={styles.container} onClick={handleClick}>
-                <Search/>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/products/:id' element={<ProductList/>}/>

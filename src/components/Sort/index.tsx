@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './sort.module.sass';
-import {currentSort, setSort, SortState} from '../../redux/slices/sortSlice';
+import {currentSort, setDescription, setOrderType, setSort} from '../../redux/slices/sortSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch} from '../../redux/store';
-import {fetchProducts} from '../../redux/slices/productsSlice';
-import {ParamsType} from '../../Pages/ProductsList';
-import {useParams} from 'react-router-dom';
+
+type SortListItem = {
+    sortType: string;
+    orderType: string;
+    description: string;
+};
 
 const Sort = () => {
-    const sortList:SortState[] = [
+    const sortList:SortListItem[] = [
         {
             sortType: '',
             orderType: 'asc',
@@ -46,21 +49,13 @@ const Sort = () => {
     const activeSort = sortList[isActive];
 
     const dispatch = useDispatch<AppDispatch>();
-    const {sortType, orderType, description} = useSelector(currentSort);
-
-    const paramsUrl = useParams();
-    const path = paramsUrl.id;
+    const {description} = useSelector(currentSort);
 
     React.useEffect(() => {
-        dispatch(setSort(activeSort));
+        dispatch(setSort(activeSort.sortType));
+        dispatch(setOrderType(activeSort.orderType));
+        dispatch(setDescription(activeSort.description));
     },[isActive]);
-
-    React.useEffect(() => {
-        if (path != null) {
-            const params:ParamsType = {path, sortType, orderType};
-            dispatch(fetchProducts(params));
-        }
-    },[description]);
 
     return (
         <div className={isOpen ? styles.sortOpen : styles.sortDefault}
