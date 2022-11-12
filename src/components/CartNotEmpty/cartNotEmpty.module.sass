@@ -7,7 +7,7 @@
   align-items: center
 
   @media (max-width: 480px)
-    margin: 20px 0
+    margin-top: 20px
 
   .header
     width: 100%
@@ -22,7 +22,17 @@
       padding: 10px 98px
       background-color: #DEE0E0FF
       border-radius: 5px
-      margin-bottom: 15px
+      margin-bottom: 10px
+
+    .subTitle
+      font-size: 16px
+      color: #A4ACAD
+      margin-bottom: 10px
+      cursor: pointer
+      transition: 0.2s linear
+
+      &:hover
+        color: darken(#A4ACAD, 10%)
 
     .product
       width: 100%
@@ -68,32 +78,41 @@
             @media (max-width: 350px)
               font-size: 16px
 
-.footer
-  width: 100%
-  display: flex
-  flex-direction: column
-  align-items: center
+      img
+        display: block
+        width: 20px
+        height: 20px
+        cursor: pointer
 
-  .productPriceTotal
-    font-size: 24px
-    font-weight: 700
-    line-height: 30px
-    margin-bottom: 10px
+  .footer
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
 
-    @media (max-width: 350px)
-      font-size: 20px
+    .productPriceTotal
+      font-size: 24px
+      font-weight: 700
+      line-height: 30px
+      margin-bottom: 10px
 
-  .btnSendOrder
-    padding: 1px 24px
-    background-color: #F46D40
-    border: none
-    color: #FFFFFF
-    border-radius: 5px
-    font-weight: 400
-    font-size: 24px
-    line-height: 30px
-    cursor: pointer
-    transition: 0.2s linear
+      @media (max-width: 350px)
+        font-size: 20px
 
-    &:hover
-      background-color: darken(#F46D40, 5%)
+    .btnSendOrder
+      width: 100%
+      text-align: center
+      padding: 5px 0
+      background-color: #F46D40
+      border: none
+      color: #FFFFFF
+      border-radius: 5px
+      font-weight: 400
+      font-size: 24px
+      line-height: 30px
+      cursor: pointer
+      transition: 0.2s linear
+      margin-bottom: 26px
+
+      &:hover
+        background-color: darken(#F46D40, 5%)

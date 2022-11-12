@@ -4,8 +4,14 @@ import menuIcon from '../../assets/img/menu-icon.svg';
 import cartIcon from '../../assets/img/cart-icon.svg';
 import reviewsIcon from '../../assets/img/reviews-icon.svg';
 import {useNavigate} from 'react-router-dom';
+import {useSelector} from "react-redux";
+import {cartItems} from '../../redux/slices/cartSlice';
 
 const FooterBar = () => {
+    const items = useSelector(cartItems);
+
+    const cartIsEmpty = items.length === 0
+
     const navigate = useNavigate();
 
     return (
@@ -16,6 +22,7 @@ const FooterBar = () => {
             </div>
             <div className={styles.item} onClick={() => navigate('/cart')}>
                 <img src={cartIcon} alt='козина'/>
+                {!cartIsEmpty && <div className={styles.count}></div>}
                 <div className={styles.title}>Корзина</div>
             </div>
             <div className={styles.item} onClick={() => navigate('/reviews')}>

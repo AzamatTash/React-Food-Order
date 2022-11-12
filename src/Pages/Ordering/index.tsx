@@ -26,7 +26,7 @@ const Ordering = () => {
     const [checked, setChecked] = React.useState<boolean>(false);
     const [additionalServices, setAdditionalServices] = React.useState<number>(1);
 
-    React.useEffect(() => window.scroll(0,0), []);
+    // React.useEffect(() => window.scroll(0,0), []);
 
     const payMethodList: string[] = ['Наличными', 'Картой'];
     // const payMethod = payMethodList[payActive];

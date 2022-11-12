@@ -8,6 +8,7 @@ import {ProductState} from '../../redux/slices/productsSlice';
 
 const Product = () => {
     const [data, setData] = React.useState<ProductState>({
+        id:'',
         title: '',
         image: '',
         weight: 0,

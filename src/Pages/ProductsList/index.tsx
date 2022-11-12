@@ -45,7 +45,7 @@ const ProductList = () => {
     },[currentTitle, sortType, orderType, searchValue]);
 
     return (
-        <>
+        <div>
             <Search/>
             <div className={styles.wrapper}>
                 <div className={styles.header}>
@@ -60,20 +60,12 @@ const ProductList = () => {
                 <div className={styles.content}>
                     {status=== 'loading' ? <img src={loadingIcon} alt="Загрузка..."/> :
                         items.map(item => (
-                        <ProductCard key={item.id}
-                                     className={styles.item}
-                                     path={path}
-                                     id={item.id}
-                                     image={item.image}
-                                     title={item.title}
-                                     weight={item.weight}
-                                     quantity={item.quantity}
-                                     price={item.price}
-                        />
+                        <ProductCard key={item.id} className={styles.item} path={path}
+                                     isProductPage={false} {...item}/>
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

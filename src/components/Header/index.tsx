@@ -5,6 +5,8 @@ import cartIcon from '../../assets/img/cart-icon.svg';
 import logoIcon from '../../assets/img/logo-icons.svg';
 import iconWatch from '../../assets/img/icon-watch.svg';
 import {Link, useNavigate} from 'react-router-dom';
+import {useSelector} from "react-redux";
+import {cartItems} from '../../redux/slices/cartSlice';
 
 export type Props = {
     setIsOpenMenu?: any,
@@ -15,6 +17,8 @@ export type Props = {
 
 const Header = ({setIsOpenMenu, setIsOpenCart}:Props) => {
     const navigate = useNavigate();
+
+    const items = useSelector(cartItems);
 
     return (
         <div className={styles.wrapper}>
@@ -39,7 +43,7 @@ const Header = ({setIsOpenMenu, setIsOpenCart}:Props) => {
                     <Link to='/ordering'>Доставка и оплата</Link>
                 </div>
                 <img className={styles.cartIcon} src={cartIcon} alt='меню' onClick={() => setIsOpenCart(true) }/>
-                <div className={styles.count}>0</div>
+                <div className={styles.count}>{items.length}</div>
             </div>
         </div>
     );
