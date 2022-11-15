@@ -1,24 +1,32 @@
 import React from 'react';
 import styles from './header.module.sass'
+import {Link, useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+
 import menuIcon from '../../assets/img/open-menu-icon.svg';
 import cartIcon from '../../assets/img/cart-icon.svg';
 import logoIcon from '../../assets/img/logo-icons.svg';
 import iconWatch from '../../assets/img/icon-watch.svg';
-import {Link, useNavigate} from 'react-router-dom';
-import {useSelector} from "react-redux";
 import {cartItems} from '../../redux/slices/cartSlice';
 
-export type Props = {
+export type PropsTypes = {
     setIsOpenMenu?: any,
     isOpenMenu?: boolean,
     setIsOpenCart?: any,
     isOpenCart?: boolean
 };
 
-const Header = ({setIsOpenMenu, setIsOpenCart}:Props) => {
+const Header = ({setIsOpenMenu, setIsOpenCart}:PropsTypes) => {
     const navigate = useNavigate();
-
     const items = useSelector(cartItems);
+    const isMounded = React.useRef(false);
+
+    React.useEffect(() => {
+        if(isMounded.current) {
+            localStorage.setItem('cart', JSON.stringify(items));
+        }
+        isMounded.current = true
+    }, [items]);
 
     return (
         <div className={styles.wrapper}>

@@ -1,8 +1,9 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+
 import CartIsEmpty from '../../components/CartIsEmpty';
 import CartNotEmpty from '../../components/CartNotEmpty';
-import {useSelector} from "react-redux";
-import {cartTotalPrice} from "../../redux/slices/cartSlice";
+import {cartTotalPrice} from '../../redux/slices/cartSlice';
 
 const Cart = () => {
     const totalPrice = useSelector(cartTotalPrice);

@@ -14,11 +14,11 @@ import Reviews from './Pages/Reviews';
 import Ordering from './Pages/Ordering';
 import Cart from './Pages/Cart';
 
-function App() {
+const App = () => {
     const [isOpenMenu, setIsOpenMenu] = React.useState<boolean>(false);
     const [isOpenCart, setIsOpenCart] = React.useState<boolean>(false);
 
-    const handleClick = () => {
+    const handleOnClick = () => {
         setIsOpenMenu(false);
         setIsOpenCart(false);
     };
@@ -27,8 +27,8 @@ function App() {
         <>
             <SideBarMenu setIsOpenMenu={setIsOpenMenu} isOpenMenu={isOpenMenu}/>
             <Header setIsOpenMenu={setIsOpenMenu} setIsOpenCart={setIsOpenCart}/>
-            <SideBarCart isOpenCart={isOpenCart}/>
-            <div className={styles.container} onClick={handleClick}>
+            <SideBarCart isOpenCart={isOpenCart} setIsOpenCart={setIsOpenCart}/>
+            <div className={styles.container} onClick={handleOnClick}>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/products/:id' element={<ProductList/>}/>

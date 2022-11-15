@@ -4,22 +4,19 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './slickStyle.css';
 import Slider from 'react-slick';
-import salomonSet from '../../assets/img/salomon-set.jpg'
-import philadelphiaSet from '../../assets/img/Philadelphia-set.jpg'
-import philadelphiaBigSet from '../../assets/img/big-Philadelphia-set.jpg'
+
 import ProductCard from '../ProductCard';
 
-interface Product {
-    image: any;
+type Product = {
+    id?: string;
     title: string;
-    description: {
-        weight: number;
-        quantity: number;
-    }
+    image: string;
+    weight: number;
+    quantity?: number;
     price: number;
 }
 
-const GoodsCarousel = (props:any) => {
+const GoodsCarousel = () => {
     const settings = {
         speed: 500,
         dots: true,
@@ -58,68 +55,110 @@ const GoodsCarousel = (props:any) => {
     };
     const setsList = [
         {
-            image: salomonSet,
-            title: 'Саломон сет',
-            description: {
-                weight: 1050,
-                quantity: 30,
-            },
-            price: 1500
+            "id": "set_1",
+            "title": "Сет Шибуи",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/489.jpg",
+            "weight": 800,
+            "quantity": 24,
+            "price": 1449
         },
         {
-            image: philadelphiaSet,
-            title: 'Филадельфия о лосось сет',
-            description: {
-                weight: 1260,
-                quantity: 36,
-            },
-            price: 1150
+            "id": "set_2",
+            "title": "Сет Ваташи",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/492.jpg",
+            "weight": 800,
+            "quantity": 34,
+            "price": 1299
         },
         {
-            image: philadelphiaBigSet,
-            title: 'Самая большая Филадельфия',
-            description: {
-                weight: 2050,
-                quantity: 45,
-            },
-            price: 2100
+            "id": "set_3",
+            "title": "Сет Широ",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/497.jpg",
+            "weight": 800,
+            "quantity": 24,
+            "price": 999
         },
         {
-            image: salomonSet,
-            title: 'Саломон сет',
-            description: {
-                weight: 1050,
-                quantity: 30,
-            },
-            price: 1500
+            "id": "set_4",
+            "title": "Сет Шитаги",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/498.jpg",
+            "weight": 800,
+            "quantity": 24,
+            "price": 899
         },
         {
-            image: philadelphiaSet,
-            title: 'Филадельфия о лосось сет',
-            description: {
-                weight: 1260,
-                quantity: 36,
-            },
-            price: 1150
+            "id": "set_5",
+            "title": "Сет Футон",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/502.jpg",
+            "weight": 950,
+            "quantity": 32,
+            "price": 1349
         },
         {
-            image: philadelphiaBigSet,
-            title: 'Самая большая Филадельфия',
-            description: {
-                weight: 2050,
-                quantity: 45,
-            },
-            price: 2100
+            "id": "set_6",
+            "title": "Сет Доно",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/504.jpg",
+            "weight": 550,
+            "quantity": 20,
+            "price": 1199
+        },
+        {
+            "id": "set_7",
+            "title": "Сет Тера",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/506.jpg",
+            "weight": 1200,
+            "quantity": 40,
+            "price": 1799
+        },
+        {
+            "id": "set_8",
+            "title": "Сет Куро",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/507.jpg",
+            "weight": 1000,
+            "quantity": 32,
+            "price": 1399
+        },
+        {
+            "id": "set_9",
+            "title": "Сет Гакко",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/508.jpg",
+            "weight": 800,
+            "quantity": 24,
+            "price": 1099
+        },
+        {
+            "id": "set_10",
+            "title": "Сет Кетору",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/505.jpg",
+            "weight": 1100,
+            "quantity": 39,
+            "price": 1299
+        },
+        {
+            "id": "set_11",
+            "title": "Сет Ашита",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/501.jpg",
+            "weight": 800,
+            "quantity": 24,
+            "price": 1009
+        },
+        {
+            "id": "set_12",
+            "title": "Сет Атама",
+            "image": "https://xn--4-ptbfxp.xn--p1ai/img/products/491.jpg",
+            "weight": 1300,
+            "quantity": 40,
+            "price": 2009
         }
     ];
 
     return (
         <div className={styles.wrapper}>
             <Slider {...settings}>
-                {(props.children || setsList).map((obj:Product, index:number) => (
-                    <ProductCard key={index} image={obj.image} title={obj.title} weight={obj.description.weight}
-                                 quantity={obj.description.quantity} price={obj.price}
-                                 isProductPage={props.isProductPage}/>))
+                {
+                    setsList.map((obj:Product) => (
+                        <ProductCard key={obj.id} path={'sets'} {...obj}/>)
+                    )
                 }
             </Slider>
         </div>

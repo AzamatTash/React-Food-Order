@@ -6,7 +6,7 @@ import {CartItem, setCartItem} from '../../redux/slices/cartSlice';
 import {useDispatch} from 'react-redux';
 import {AppDispatch} from '../../redux/store';
 
-type PropsType = {
+type PropsTypes = {
     path?: string;
     id?: string;
     image: string;
@@ -14,11 +14,11 @@ type PropsType = {
     weight: number;
     quantity?: number;
     price: number;
-    isProductPage: boolean;
+    isProductPage?: boolean;
     className?: string
 }
 
-const ProductCard = ({path, id, image, title, weight, quantity,price, isProductPage}:PropsType) => {
+const ProductCard = ({path, id, image, title, weight, quantity,price, isProductPage}:PropsTypes) => {
     const dispatch = useDispatch<AppDispatch>();
 
     const onClickAddProduct = () => {
@@ -29,7 +29,6 @@ const ProductCard = ({path, id, image, title, weight, quantity,price, isProductP
             price,
             quantityValue: 1
         };
-
         dispatch(setCartItem(item));
     };
 

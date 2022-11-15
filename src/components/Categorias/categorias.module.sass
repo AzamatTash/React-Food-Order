@@ -23,6 +23,7 @@
       margin-right: 0
 
     .item
+      display: block
       width: 100%
       height: 100%
       max-height: 130px
@@ -66,6 +67,19 @@
         font-weight: 500
         color: #FFFFFF
 
+      .placeholder
+        position: absolute
+        top: 10px
+        right: 10px
+        z-index: 2100
+        font-size: 16px
+        font-weight: 400
+        line-height: 11px
+        color: #FFFFFF
+        background-color: #EB5757
+        padding: 4px 6px
+        border-radius: 30px
+
     .row
       width: 100%
       max-width: 678px
@@ -76,7 +90,6 @@
       .itemRow
         width: calc(50% - 10px)
         height: 130px
-        //1920/1080 >130px
         position: relative
         border-radius: 5px
         overflow: hidden
@@ -112,3 +125,16 @@
           line-height: 30px
           font-weight: 500
           color: #FFFFFF
+
+        .placeholder
+          position: absolute
+          top: 10px
+          right: 10px
+          z-index: 2100
+          font-size: 16px
+          font-weight: 400
+          line-height: 11px
+          color: #FFFFFF
+          background-color: #EB5757
+          padding: 4px 6px
+          border-radius: 30px

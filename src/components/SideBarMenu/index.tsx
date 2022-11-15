@@ -10,9 +10,9 @@ import salatsIcon from '../../assets/img/salats-icon.svg';
 import supsIcon from '../../assets/img/sups-icon.svg';
 import kornsIcon from '../../assets/img/korns-icons.svg';
 import {Link} from 'react-router-dom';
-import {Props} from '../Header';
+import {PropsTypes} from '../Header';
 
-const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:Props) => {
+const SideBarMenu = ({isOpenMenu, setIsOpenMenu}:PropsTypes) => {
         return (
         <div className={isOpenMenu ? styles.active : styles.wrapper} onClick={() => setIsOpenMenu(false)}>
             <div className={styles.head}>

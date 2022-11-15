@@ -28,17 +28,7 @@ type ProductsState = {
 };
 
 const initialState:ProductsState = {
-    items: [
-        {
-            id: '',
-            title: '',
-            image: '',
-            weight: 0,
-            quantity: 0,
-            composition: '',
-            price: 0,
-        }
-    ],
+    items: [],
     status: 'loading'
 };
 

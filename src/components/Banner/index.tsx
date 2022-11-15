@@ -3,7 +3,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './banner.module.sass';
 import Slider from 'react-slick';
-import bannerImg from '../../assets/img/banner-img.jpg';
+import bannerOne from '../../assets/img/baner-1.jpg';
+import bannerTwo from '../../assets/img/baner-2.jpg';
 
 const Banner = () => {
     const NextArrow = () => <div style={{display: 'none'}}/>
@@ -24,8 +25,8 @@ const Banner = () => {
     return (
         <div className={styles.wrapper}>
             <Slider {...settings}>
-                <img className={styles.img} src={bannerImg} alt='banner'/>
-                <img className={styles.img} src={bannerImg} alt='banner'/>
+                <img className={styles.img} src={bannerOne} alt='banner'/>
+                <img className={styles.img} src={bannerTwo} alt='banner'/>
             </Slider>
         </div>
     );

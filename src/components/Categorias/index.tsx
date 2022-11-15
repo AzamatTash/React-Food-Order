@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './categorias.module.sass';
+import {Link} from 'react-router-dom';
+
 import categoriPizza from '../../assets/img/categori-pizza.jpg';
 import categoriKornDog from '../../assets/img/categori-korndog.png';
 import categoriSets from '../../assets/img/categori-sets.jpg';
@@ -10,30 +12,32 @@ const Categorias = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.column}>
-                <div className={styles.item}>
+                <Link to='/products/sets' className={styles.item}>
                     <img src={categoriSets} alt='sets'/>
                     <div className={styles.title}>Сеты</div>
-                </div>
+                </Link>
                 <div className={styles.item}>
                     <img src={categoriPizza} alt='pizza'/>
                     <div className={styles.title}>Пицца</div>
+                    <div className={styles.placeholder}>скоро</div>
                 </div>
             </div>
             <div className={styles.column}>
                 <div className={styles.row}>
-                    <div className={styles.itemRow}>
+                    <Link to='/products/sushi' className={styles.itemRow}>
                         <img src={categoriSushi} alt='Sushi'/>
                         <div className={styles.title}>Суши</div>
-                    </div>
+                    </Link>
                     <div className={styles.itemRow}>
                         <img src={categoriKornDog} alt='korn-dog'/>
                         <div className={styles.title}>Корн дог</div>
+                        <div className={styles.placeholder}>скоро</div>
                     </div>
                 </div>
-                <div className={styles.item}>
+                <Link to='/products/wok' className={styles.item}>
                     <img src={categoriWok} alt='wok'/>
                     <div className={styles.title}>WOK</div>
-                </div>
+                </Link>
             </div>
         </div>
     );
