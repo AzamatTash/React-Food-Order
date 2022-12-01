@@ -2,9 +2,6 @@ import React from 'react';
 import styles from './productCard.module.sass'
 import upCountIcon from '../../assets/img/up-count.svg';
 import {Link} from 'react-router-dom';
-import {CartItem, setCartItem} from '../../redux/slices/cartSlice';
-import {useDispatch} from 'react-redux';
-import {AppDispatch} from '../../redux/store';
 
 type PropsTypes = {
     path?: string;
@@ -19,19 +16,6 @@ type PropsTypes = {
 }
 
 const ProductCard = ({path, id, image, title, weight, quantity,price, isProductPage}:PropsTypes) => {
-    const dispatch = useDispatch<AppDispatch>();
-
-    const onClickAddProduct = () => {
-        const item:CartItem = {
-            id,
-            image,
-            title,
-            price,
-            quantityValue: 1
-        };
-        dispatch(setCartItem(item));
-    };
-
 
     return (
         <div className={styles.card}>
@@ -48,7 +32,9 @@ const ProductCard = ({path, id, image, title, weight, quantity,price, isProductP
                     <div className={styles.footerElem}>
                         <div className={styles.price}>{price} Руб</div>
                         {isProductPage ? <img className={styles.btnIcon} src={upCountIcon} alt='Добавить'/> :
-                            <button className={styles.btn} onClick={onClickAddProduct}>Хочу!</button>}
+                            <Link to={`/products/${path}/${id}`}>
+                                <button className={styles.btn}>Хочу!</button>
+                            </Link>}
                     </div>
                 </div>
             </div>

@@ -54,7 +54,7 @@ const ProductList = () => {
                         <div className={styles.title}>{currentTitle}</div>
                     </div>
                     <div className={styles.sort}>
-                        <Sort/>
+                        <Sort isSets={path === 'sets'}/>
                     </div>
                 </div>
                 <div className={styles.content}>

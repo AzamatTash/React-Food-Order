@@ -22,7 +22,7 @@ const FooterBar = () => {
             </div>
             <div className={styles.item} onClick={() => navigate('/cart')}>
                 <img src={cartIcon} alt='козина'/>
-                {!cartIsEmpty && <div className={styles.count}></div>}
+                {!cartIsEmpty && <div className={styles.count}>{items.length}</div>}
                 <div className={styles.title}>Корзина</div>
             </div>
             <div className={styles.item} onClick={() => navigate('/reviews')}>

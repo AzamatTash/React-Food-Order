@@ -42,7 +42,7 @@ const MoreProductInfo = ({id, title, price, weight, image, composition}:ProductS
                 </div>
                 <div className={styles.text}>Состав:</div>
                 <div className={styles.subText}>{composition}</div>
-                <button className={styles.btn} onClick={onClickAddProduct}>Хочу!</button>
+                <button className={styles.btn} onClick={onClickAddProduct}>В КОРЗИНУ</button>
             </div>
         </div>
     );

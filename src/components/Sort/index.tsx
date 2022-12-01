@@ -9,9 +9,12 @@ type SortListItem = {
     orderType: string;
     description: string;
 };
+type SortProps = {
+    isSets: boolean
+}
 
-const Sort = () => {
-    const sortList:SortListItem[] = [
+const Sort = ({isSets}:SortProps) => {
+    let sortList:SortListItem[] = [
         {
             sortType: '',
             orderType: 'asc',
@@ -33,16 +36,20 @@ const Sort = () => {
             description: 'Сначало дороже'
         },
         {
-            sortType: 'quantity',
-            orderType: 'asc',
-            description: 'Количество кусочков'
-        },
-        {
             sortType: 'weight',
             orderType: 'asc',
             description: 'Вес'
         },
+        {
+            sortType: 'quantity',
+            orderType: 'asc',
+            description: 'Количество кусочков'
+        }
     ];
+
+    if(!isSets) {
+        sortList = sortList.filter(obj => obj.sortType !== 'quantity');
+    }
 
     const [isOpen, setIsOpen] = React.useState<boolean>(false);
     const [isActive, setIsActive] = React.useState<number>(0);
