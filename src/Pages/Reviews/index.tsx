@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './reviews.module.sass';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+
 import {getConvertDate} from '../../utils/convertDate';
 
 type Data = {
     name: string;
     review: string;
     date: string;
-}
+};
 
 const Reviews = () => {
     const [reviewsList, setReviewsList] = React.useState([
@@ -38,7 +39,7 @@ const Reviews = () => {
     const initialValues:Data = {
         name: '',
         review: '',
-        date: +new Date() + '',
+        date: +new Date() + ''
     };
 
     const validationSchema = Yup.object({

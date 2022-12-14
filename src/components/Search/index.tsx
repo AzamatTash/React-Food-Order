@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './serach.module.sass';
+import {useDispatch} from 'react-redux';
 import debounce from 'lodash.debounce';
+
 import searchIcon from '../../assets/img/search-icon.svg';
-import {useDispatch} from "react-redux";
 import {SetSearchValue} from '../../redux/slices/sortSlice';
 import {AppDispatch} from '../../redux/store';
 import clearValue from '../../assets/img/clear-input.svg';
@@ -21,7 +22,6 @@ const Search = () => {
 
     const updateSearchValue = React.useCallback(
         debounce((str: string) => {
-            console.log('send')
             dispatch(SetSearchValue(str))
         }, 400),
         []

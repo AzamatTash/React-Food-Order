@@ -1,18 +1,17 @@
 import React from 'react';
 import styles from './footerBar.module.sass';
+import {NavigateFunction, useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+
 import menuIcon from '../../assets/img/menu-icon.svg';
 import cartIcon from '../../assets/img/cart-icon.svg';
 import reviewsIcon from '../../assets/img/reviews-icon.svg';
-import {useNavigate} from 'react-router-dom';
-import {useSelector} from "react-redux";
-import {cartItems} from '../../redux/slices/cartSlice';
+import {CartItem, cartItems} from '../../redux/slices/cartSlice';
 
 const FooterBar = () => {
-    const items = useSelector(cartItems);
-
-    const cartIsEmpty = items.length === 0
-
-    const navigate = useNavigate();
+    const items: CartItem[] = useSelector(cartItems);
+    const cartIsEmpty: boolean = items.length === 0
+    const navigate: NavigateFunction = useNavigate();
 
     return (
         <div className={styles.wrapper}>

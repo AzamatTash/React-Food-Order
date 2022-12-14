@@ -15,7 +15,6 @@ import {
     removeCartItem,
     setCartItem
 } from '../../redux/slices/cartSlice';
-import {getShortStr} from '../../utils/getShortStr';
 
 type CartProps = {
     isOrderingPage: boolean;
@@ -34,10 +33,14 @@ const CartNotEmpty = ({isOrderingPage, setIsOpenCart}:CartProps) => {
                 <div className={styles.subTitle} onClick={() => dispatch(clearCart())}>Очистить корзину</div>
                 {
                     items.map(item => (
-                        <div className={styles.product}>
-                            <img src={item.image} className={styles.img} alt="image"/>
+                        <div className={styles.product} key={item.id}>
+                            <Link to={`${item.pathname}`} className={styles.link}>
+                                <img src={item.image} className={styles.img} alt='image'/>
+                            </Link>
                             <div className={styles.info}>
-                                <div className={styles.productName}>{getShortStr(item.title)}</div>
+                                <Link to={`${item.pathname}`}>
+                                    <div className={styles.productName}>{item.title}</div>
+                                </Link>
                                 <div className={styles.optionals}>
                                     {
                                         item.quantityValue !== 1 &&
@@ -51,7 +54,7 @@ const CartNotEmpty = ({isOrderingPage, setIsOpenCart}:CartProps) => {
                                     <div className={styles.productPrice}>{item.price} Руб</div>
                                 </div>
                             </div>
-                            <img src={removeIcon} onClick={() => dispatch(removeCartItem(item.id)) } alt="remove"/>
+                            <img src={removeIcon} onClick={() => dispatch(removeCartItem(item.id)) } alt='remove'/>
                         </div>)
                     )
                 }

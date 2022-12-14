@@ -42,10 +42,14 @@
       align-items: center
       margin-bottom: 20px
 
-      .img
+      .link
+        display: block
         width: 25%
-        height: 100%
-        object-fit: cover
+
+        .img
+          width: 100%
+          height: 100%
+          object-fit: cover
 
       .info
         width: 75%
@@ -55,9 +59,14 @@
         margin-left: 10px
 
         .productName
+          width: 185px
           line-height: 22px
-          margin-bottom: 10px
+          white-space: nowrap
           overflow: hidden
+          text-overflow: ellipsis
+          text-align: left
+          color: #000000
+          margin-bottom: 10px
 
         .optionals
           display: flex

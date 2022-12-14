@@ -9,10 +9,10 @@ import {PropsTypes} from '../Header';
 import {cartTotalPrice} from '../../redux/slices/cartSlice';
 
 const SideBarCart = ({isOpenCart, setIsOpenCart}:PropsTypes) => {
-    const totalPrice = useSelector(cartTotalPrice);
+    const totalPrice: number = useSelector(cartTotalPrice);
     const location = useLocation();
-    const isOrderingPage = location.pathname === '/ordering'
-    const isCartEmpty = totalPrice === 0;
+    const isOrderingPage: boolean = location.pathname === '/ordering'
+    const isCartEmpty: boolean = totalPrice === 0;
 
     return (
         <div className={isOpenCart ? styles.active : styles.wrapper}>

@@ -3,6 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './banner.module.sass';
 import Slider from 'react-slick';
+
 import bannerOne from '../../assets/img/baner-1.jpg';
 import bannerTwo from '../../assets/img/baner-2.jpg';
 

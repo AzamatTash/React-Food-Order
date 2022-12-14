@@ -1,20 +1,26 @@
 import React from 'react';
 import styles from './MoreProductInfo.module.sass';
+import {useDispatch} from 'react-redux';
+import {useLocation} from 'react-router-dom';
+
 import upCountIcon from '../../assets/img/up-count.svg';
 import downCountIcon from '../../assets/img/down-count.svg';
 import {ProductState} from '../../redux/slices/productsSlice';
-import {useDispatch} from "react-redux";
-import {AppDispatch} from "../../redux/store";
-import {CartItem, setCartItem} from "../../redux/slices/cartSlice";
+import {AppDispatch} from '../../redux/store';
+import {CartItem, setCartItem} from '../../redux/slices/cartSlice';
 
 const MoreProductInfo = ({id, title, price, weight, image, composition}:ProductState) => {
     const [countProduct, setCountProduct] = React.useState<number>(1)
 
     const dispatch = useDispatch<AppDispatch>();
 
+    const location = useLocation();
+    const pathname: string = location.pathname;
+
     const onClickAddProduct = () => {
         const item:CartItem = {
             id,
+            pathname,
             image,
             title,
             price,

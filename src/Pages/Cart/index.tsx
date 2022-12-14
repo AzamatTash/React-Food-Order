@@ -7,15 +7,12 @@ import {cartTotalPrice} from '../../redux/slices/cartSlice';
 
 const Cart = () => {
     const totalPrice = useSelector(cartTotalPrice);
-
     React.useEffect(() => window.scrollTo(0,0));
-
     const cartIsEmpty = totalPrice === 0;
+
     return (
         <div>
-            {
-                cartIsEmpty ? <CartIsEmpty/> : <CartNotEmpty isOrderingPage={false}/>
-            }
+            {cartIsEmpty ? <CartIsEmpty/> : <CartNotEmpty isOrderingPage={false}/>}
         </div>
     );
 };

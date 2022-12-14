@@ -11,7 +11,7 @@ type SortListItem = {
 };
 type SortProps = {
     isSets: boolean
-}
+};
 
 const Sort = ({isSets}:SortProps) => {
     let sortList:SortListItem[] = [
@@ -53,7 +53,7 @@ const Sort = ({isSets}:SortProps) => {
 
     const [isOpen, setIsOpen] = React.useState<boolean>(false);
     const [isActive, setIsActive] = React.useState<number>(0);
-    const activeSort = sortList[isActive];
+    const activeSort: SortListItem = sortList[isActive];
 
     const dispatch = useDispatch<AppDispatch>();
     const {description} = useSelector(currentSort);

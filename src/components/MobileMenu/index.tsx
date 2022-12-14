@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './mobileMenu.module.sass';
+import {Link} from 'react-router-dom';
+
 import pizzaIcon from '../../assets/img/menu-pizza.png';
 import setsIcon from '../../assets/img/menu-sets.png';
 import wokIcon from '../../assets/img/menu-wok.png';
@@ -8,7 +10,6 @@ import sushiIcon from '../../assets/img/menu-sushi.png';
 import supsIcon from '../../assets/img/menu-sups.png';
 import salatsIcon from '../../assets/img/menu-salats.png';
 import korndogsIcon from '../../assets/img/menu-korndog.png';
-import {Link} from "react-router-dom";
 
 const MobileMenu = () => {
     return (

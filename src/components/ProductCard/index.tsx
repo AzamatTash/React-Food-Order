@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './productCard.module.sass'
-import upCountIcon from '../../assets/img/up-count.svg';
+import styles from './productCard.module.sass';
 import {Link} from 'react-router-dom';
+
+import upCountIcon from '../../assets/img/up-count.svg';
 
 type PropsTypes = {
     path?: string;
@@ -13,10 +14,9 @@ type PropsTypes = {
     price: number;
     isProductPage?: boolean;
     className?: string
-}
+};
 
 const ProductCard = ({path, id, image, title, weight, quantity,price, isProductPage}:PropsTypes) => {
-
     return (
         <div className={styles.card}>
             <img src={image} className={isProductPage ? styles.img : styles.imgInitial}

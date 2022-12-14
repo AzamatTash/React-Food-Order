@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './ordering.module.sass';
 import * as Yup from 'yup';
 import {Field, Form, Formik, FormikProps} from 'formik';
+
 import upCount from '../../assets/img/up-count.svg';
 import downCount from '../../assets/img/down-count.svg';
 
-interface FormValues {
+type FormValues = {
     phone: string;
     name: string;
     checked: boolean;
@@ -17,7 +18,7 @@ interface FormValues {
     floor?: string;
     apartment?: string;
     email?: string;
-}
+};
 
 const Ordering = () => {
     const [payActive, setPayActive] = React.useState<number>(0);
@@ -26,17 +27,13 @@ const Ordering = () => {
     const [checked, setChecked] = React.useState<boolean>(false);
     const [additionalServices, setAdditionalServices] = React.useState<number>(1);
 
-    // React.useEffect(() => window.scroll(0,0), []);
-
     const payMethodList: string[] = ['Наличными', 'Картой'];
-    // const payMethod = payMethodList[payActive];
 
     const deliveryList: string[] = ['Курьером', 'Самовывоз'];
     const deliveryMethod = deliveryList[deliveryActive];
     const deliveryMethodCurrent = deliveryMethod === deliveryList[1];
 
     const deliveryTimeList: string[] = ['На сейчас', 'На время'];
-    // const deliveryTimeMethod = deliveryTimeList[deliveryTime];
 
     const initialValues:FormValues = {
         phone: '',
@@ -68,9 +65,7 @@ const Ordering = () => {
             .required(' ')
     });
 
-    const onSubmit = (values:FormValues) => {
-        console.log({...values, additionalServices});
-    };
+    const onSubmit = () => {};
 
     return (
         <div className={styles.wrapper}>
@@ -166,7 +161,7 @@ const Ordering = () => {
                 }}
             </Formik>
             <div className={styles.subText}>Нажимая на кнопку Оформить заказ, Вы подтверждаете свое согласие
-                на обработку персональных данных в соответствии с <a href="#">Публичной оффертой</a></div>
+                на обработку персональных данных в соответствии с <a href='#'>Публичной оффертой</a></div>
         </div>
     );
 };

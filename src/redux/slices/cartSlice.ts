@@ -5,6 +5,7 @@ import {calcTotalPrice} from '../../utils/calcTotalPrice';
 
 export type CartItem = {
     id?: string;
+    pathname: string;
     image: string;
     title: string;
     price: number;

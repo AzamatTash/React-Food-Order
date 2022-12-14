@@ -1,12 +1,17 @@
 import React from 'react';
-import MoreProductInfo from '../../components/MoreProductInfo';
 import styles from './productPage.module.sass';
-import backIcon from '../../assets/img/back-icon.svg';
 import {useLocation, useNavigate, useParams} from 'react-router-dom';
+
+import backIcon from '../../assets/img/back-icon.svg';
+import MoreProductInfo from '../../components/MoreProductInfo';
 import {api} from '../../axios';
 import {ProductState} from '../../redux/slices/productsSlice';
 
 const Product = () => {
+    const navigate = useNavigate();
+    const params = useParams();
+    const id = params.id;
+
     const [data, setData] = React.useState<ProductState>({
         id:'',
         title: '',
@@ -29,11 +34,7 @@ const Product = () => {
         fetchProduct().catch(() => {
             alert('Продукт не найден, попробуйте позже!')
         })
-    },[]);
-
-    const navigate = useNavigate();
-    const params = useParams();
-    let id = params.id
+    },[id]);
 
     const onClickBack = () => {
         if(id != null) navigate(`${path.replace(id, '')}`);

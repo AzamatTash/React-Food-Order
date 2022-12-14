@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './header.module.sass'
-import {Link, useNavigate} from 'react-router-dom';
+import styles from './header.module.sass';
+import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
 import menuIcon from '../../assets/img/open-menu-icon.svg';
 import cartIcon from '../../assets/img/cart-icon.svg';
 import logoIcon from '../../assets/img/logo-icons.svg';
 import iconWatch from '../../assets/img/icon-watch.svg';
-import {cartItems} from '../../redux/slices/cartSlice';
+import {CartItem, cartItems} from '../../redux/slices/cartSlice';
 
 export type PropsTypes = {
     setIsOpenMenu?: any,
@@ -17,9 +17,9 @@ export type PropsTypes = {
 };
 
 const Header = ({setIsOpenMenu, setIsOpenCart}:PropsTypes) => {
-    const navigate = useNavigate();
-    const items = useSelector(cartItems);
-    const isMounded = React.useRef(false);
+    const navigate: NavigateFunction = useNavigate();
+    const items: CartItem[] = useSelector(cartItems);
+    const isMounded: React.MutableRefObject<boolean> = React.useRef(false);
 
     React.useEffect(() => {
         if(isMounded.current) {
@@ -36,8 +36,8 @@ const Header = ({setIsOpenMenu, setIsOpenCart}:PropsTypes) => {
                 <div className={styles.info}>
                     <div className={styles.infoLeft}>
                         <div className={styles.title}>Наш телефон</div>
-                        <a className={styles.phone} href="tel:+996705188955">+996 705 188 955</a>
-                        <a className={styles.phone} href="tel:+996555188955">+996 555 188 955</a>
+                        <a className={styles.phone} href='tel:+996705188955'>+996 705 188 955</a>
+                        <a className={styles.phone} href='tel:+996555188955'>+996 555 188 955</a>
                     </div>
                     <div className={styles.infoRight}>
                         <img className={styles.watchIcon} src={iconWatch} alt='time'/>

@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+<h1 align="center">React Food Order</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Food Order(RomSem) - это приложение для заказа еды онлайн. В приложении реализовано удобное меню, вывод продуктов 
+по категориям, корзина товаров, форма для заказа, также поиск и сортировака товаров. Backend роль выполняет - сервис mockAPI.
+<h3 align="left">Stack:</h3>
 
-## Available Scripts
+<ul>
+  <li>
+    <b>React</b>
+  </li>
+  <li>
+    <b>TypeScript</b>
+  </li>
+  <li>
+    <b>Redux Toolkit</b>
+  </li>
+  <li>
+    <b>Redux Router v6</b>
+  </li>
+  <li>
+    <b>Axios</b>
+  </li>
+  <li>
+    <b>Lodash.Debounce</b>
+  </li>
+</ul>
 
-In the project directory, you can run:
+<h3 align="left">Backend:</h3>
 
-### `yarn start`
+<ul>
+  <li>
+    <a href="https://mockapi.io/"><b>mockAPI</b></a>
+  </li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h3 align="left">Deploy:</h3>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<ul>
+  <li>
+    <b>Vercel</b> -  <a href="https://foodorder-iota.vercel.app/"><b>React Food Order</b></a>
+  </li>
+</ul>
 
-### `yarn test`
+<hr>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2>Install:</h2>
+<p>npm install</p>
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>Usage:</h2>
+<p>npm run start</p>
